@@ -7,7 +7,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,900&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <style>
-:root{--bg:#0a0a0a;--panel:#181818;--red:#e50914;--white:#fff;--grey-1:rgba(255,255,255,.7);--grey-2:rgba(255,255,255,.45);--hair:rgba(255,255,255,.1);--green:#46d369;}
+:root{
+  --bg:#0a0a0a; --panel:#181818; --panel-2:#0b0b0b; --red:#e50914; --white:#fff;
+  --grey-1:rgba(255,255,255,.7); --grey-2:rgba(255,255,255,.45); --hair:rgba(255,255,255,.1);
+  --green:#46d369;
+}
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:var(--bg);color:var(--white);font-family:'Archivo',sans-serif;}
 ::selection{background:var(--red);color:#fff;}
@@ -40,7 +44,7 @@ nav.scrolled{background:#0a0a0aee;box-shadow:0 2px 20px rgba(0,0,0,.4);}
 .mobile-drawer.open{transform:translateY(0);}
 .mobile-drawer a{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:.03em;color:#fff;text-decoration:none;cursor:pointer;}
 .mobile-drawer a:hover{color:var(--red);}
-.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;background-image:linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.05) 30%,rgba(10,10,10,.55) 68%,var(--bg) 100%),linear-gradient(90deg,rgba(10,10,10,.92) 0%,rgba(10,10,10,.55) 32%,rgba(10,10,10,.05) 65%),url('IMG_3435.jpg');background-size:cover;background-position:center 50%;}
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;background-image:linear-gradient(180deg, rgba(10,10,10,.15) 0%, rgba(10,10,10,.05) 30%, rgba(10,10,10,.55) 68%, var(--bg) 100%),linear-gradient(90deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.55) 32%, rgba(10,10,10,.05) 65%),url('q4.jpeg');background-size:cover;background-position:center 18%;}
 .hero-content{position:relative;z-index:2;padding:0 4vw 4.5rem;max-width:760px;}
 .hero-badge{display:inline-flex;align-items:center;gap:.4rem;font-family:'Bebas Neue',sans-serif;font-size:.85rem;letter-spacing:.14em;color:var(--red);background:rgba(229,9,20,.12);border:1px solid rgba(229,9,20,.4);padding:.3rem .8rem;border-radius:3px;margin-bottom:1.1rem;}
 h1.title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.6rem,7vw,5rem);line-height:.94;letter-spacing:.01em;margin-bottom:1rem;text-shadow:0 4px 24px rgba(0,0,0,.5);}
@@ -68,7 +72,7 @@ h1.title .r{color:var(--red);}
 .shelf{padding:2.6rem 4vw 1rem;max-width:1300px;margin:0 auto;}
 .shelf h2{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.03em;margin-bottom:1.2rem;}
 .shelf-grid{display:grid;grid-template-columns:repeat(3,minmax(160px,320px));gap:1.2rem;}
-.tile{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:9/16;cursor:pointer;border:1px solid var(--hair);background:linear-gradient(150deg,#222,#050505);display:flex;align-items:flex-end;transition:transform .3s,box-shadow .3s;}
+.tile{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:9/16;height:auto;cursor:pointer;border:1px solid var(--hair);background:linear-gradient(150deg,#222,#050505);display:flex;align-items:flex-end;transition:transform .3s,box-shadow .3s;}
 .tile:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.55);border-color:var(--red);}
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:transform .4s;}
 .tile:hover img{transform:scale(1.06);}
@@ -92,7 +96,6 @@ h1.title .r{color:var(--red);}
 .cover-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.4rem,5.5vw,4rem);letter-spacing:.02em;line-height:.95;}
 .cover-title span{color:var(--red);}
 .cover-sub{color:var(--grey-2);font-size:.9rem;margin-top:.6rem;max-width:620px;}
-.empty-note{padding:0 4vw;color:var(--grey-2);font-size:.9rem;}
 .filter-row{display:flex;gap:.6rem;flex-wrap:wrap;padding:0 4vw;margin-bottom:1rem;}
 .chip{font-size:.78rem;color:var(--grey-1);background:rgba(255,255,255,.06);border:1px solid var(--hair);padding:.4rem .95rem;border-radius:20px;cursor:pointer;transition:.2s;}
 .chip:hover{border-color:var(--grey-1);color:#fff;}
@@ -103,32 +106,41 @@ h1.title .r{color:var(--red);}
 .row-head h3{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.03em;}
 .row-head span{font-size:.72rem;color:var(--grey-2);}
 .rail-wrap{position:relative;}
-.rail{display:flex;gap:.5rem;overflow-x:auto;overflow-y:visible;padding:2.6rem 4vw;margin:-2.6rem 0;scrollbar-width:none;-ms-overflow-style:none;}
+.rail{display:flex;gap:.5rem;overflow-x:auto;overflow-y:visible;padding:2.6rem 4vw 2.6rem;margin:-2.6rem 0;scrollbar-width:none;-ms-overflow-style:none;}
 .rail::-webkit-scrollbar{display:none;}
 .rail-arrow{position:absolute;top:0;bottom:0;width:56px;z-index:8;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;background:linear-gradient(90deg,rgba(10,10,10,.85),transparent);opacity:0;transition:opacity .2s;}
 .rail-arrow.right{right:0;background:linear-gradient(270deg,rgba(10,10,10,.85),transparent);}
 .rail-wrap:hover .rail-arrow{opacity:1;}
-.rcard{flex:0 0 auto;position:relative;border-radius:4px;overflow:hidden;background:var(--panel);cursor:pointer;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .35s cubic-bezier(.34,1.32,.64,1),box-shadow .35s;transform-origin:center center;}
-.rail .rcard{width:200px;aspect-ratio:9/16;}
+.rail-arrow:hover{background:linear-gradient(90deg,rgba(10,10,10,.98),transparent);}
+.rail-arrow.right:hover{background:linear-gradient(270deg,rgba(10,10,10,.98),transparent);}
+.rcard{flex:0 0 auto;position:relative;border-radius:4px;overflow:hidden;background:var(--panel);cursor:pointer;opacity:0;transform:translateY(16px);transition:opacity .5s,transform .35s cubic-bezier(.34,1.32,.64,1),box-shadow .35s,z-index 0s;transform-origin:center center;}
+.rail .rcard{width:200px;aspect-ratio:9/16;height:auto;}
 .rail .rcard img,.rail .rcard video{width:100%;height:100%;object-fit:cover;display:block;}
+.rail.landscape-rail .rcard{width:300px;aspect-ratio:16/9;height:auto;}
 .rcard.visible{opacity:1;transform:translateY(0);}
-.rcard:hover{transform:scale(1.1) translateY(-10px);box-shadow:0 26px 55px rgba(0,0,0,.75);z-index:5;}
+.rcard:first-child{transform-origin:left center;}
+.rcard:last-child{transform-origin:right center;}
+.rcard:hover{transform:scale(1.1) translateY(-10px);box-shadow:0 26px 55px rgba(0,0,0,.75);z-index:5;border-radius:4px;}
 .rcard .info-ov{position:absolute;left:0;right:0;bottom:0;padding:.6rem .7rem .55rem;background:linear-gradient(0deg,rgba(0,0,0,.94) 0%,rgba(0,0,0,.65) 65%,transparent 100%);opacity:0;transform:translateY(6px);transition:opacity .2s,transform .2s;display:flex;flex-direction:column;gap:.4rem;}
 .rcard:hover .info-ov{opacity:1;transform:translateY(0);}
-.ov-icons{display:flex;align-items:center;gap:.4rem;}
-.ov-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(42,42,42,.7);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.75rem;cursor:pointer;transition:.2s;flex-shrink:0;}
-.ov-icon:hover{border-color:#fff;background:rgba(80,80,80,.85);}
-.ov-icon.play{background:#fff;color:#000;border-color:#fff;}
-.ov-icon.active{color:var(--red);border-color:var(--red);}
-.ov-meta{display:flex;align-items:center;gap:.4rem;font-size:.66rem;}
-.ov-meta .match{color:var(--green);font-weight:700;}
-.ov-meta .cap{color:var(--grey-1);letter-spacing:.02em;}
-.rcard .center-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;pointer-events:none;}
+.info-ov .ov-icons{display:flex;align-items:center;gap:.4rem;}
+.info-ov .ov-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);background:rgba(42,42,42,.7);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.75rem;cursor:pointer;transition:border-color .2s,background .2s,color .2s;flex-shrink:0;}
+.info-ov .ov-icon:hover{border-color:#fff;background:rgba(80,80,80,.85);}
+.info-ov .ov-icon.play{background:#fff;color:#000;border-color:#fff;}
+.info-ov .ov-icon.play:hover{background:rgba(255,255,255,.8);}
+.info-ov .ov-icon.active{color:var(--red);border-color:var(--red);}
+.info-ov .ov-meta{display:flex;align-items:center;gap:.4rem;font-size:.66rem;}
+.info-ov .ov-meta .match{color:var(--green);font-weight:700;}
+.info-ov .ov-meta .cap{color:var(--grey-1);letter-spacing:.02em;}
+.info-ov .ico{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.9);color:#000;display:flex;align-items:center;justify-content:center;font-size:.8rem;}
+.info-ov .cap{font-size:.68rem;color:var(--grey-1);letter-spacing:.02em;}
+.rcard .center-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;background:rgba(0,0,0,0);}
 .rcard:hover .center-play{opacity:1;background:rgba(0,0,0,.15);}
 .rcard .center-play i{font-size:1.8rem;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.6);}
 .lightbox{position:fixed;inset:0;z-index:600;background:rgba(0,0,0,.96);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s;}
 .lightbox.active{opacity:1;visibility:visible;}
-.lightbox-img,.lightbox-video{max-width:min(90vw,1050px);max-height:86vh;object-fit:contain;border-radius:6px;background:#000;}
+.lightbox-img{max-width:min(90vw,1050px);max-height:86vh;object-fit:contain;border-radius:6px;}
+.lightbox-video{max-width:min(90vw,1050px);max-height:86vh;background:#000;border-radius:6px;}
 .lb-close,.lb-nav{background:rgba(255,255,255,.08);border:1px solid var(--hair);color:var(--grey-1);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.25s;border-radius:50%;}
 .lb-close{position:fixed;top:1.4rem;right:1.4rem;width:44px;height:44px;font-size:1.05rem;z-index:2;}
 .lb-close:hover{color:#fff;border-color:var(--red);}
@@ -145,28 +157,34 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
 .footer-brand span{color:var(--red);}
 .footer-sub{font-size:.72rem;letter-spacing:.1em;color:var(--grey-2);text-transform:uppercase;}
 .footer-links{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem 1.5rem;max-width:700px;}
-.footer-links a{font-size:.72rem;color:var(--grey-2);text-decoration:none;cursor:pointer;}
+.footer-links a{font-size:.72rem;color:var(--grey-2);text-decoration:none;cursor:default;}
 .footer-links a:hover{text-decoration:underline;color:var(--grey-1);}
 .player{position:fixed;bottom:1.5rem;right:1.5rem;z-index:200;background:rgba(20,20,20,.95);border:1px solid var(--hair);border-left:3px solid var(--red);display:flex;align-items:center;gap:.8rem;padding:.6rem 1.2rem;border-radius:4px;opacity:0;animation:slideUp .6s .4s forwards;}
 @keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
-.player-btn{background:none;border:none;color:var(--red);font-size:1rem;cursor:pointer;padding:0;line-height:1;}
+.player-btn{background:none;border:none;color:var(--red);font-size:1rem;cursor:pointer;transition:transform .2s;padding:0;line-height:1;}
+.player-btn:hover{transform:scale(1.2);}
 .player-label{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-2);}
 .player-bars{display:flex;align-items:center;gap:2px;height:12px;}
-.player-bars span{width:2px;background:var(--red);border-radius:1px;height:4px;}
+.player-bars span{width:2px;background:var(--red);border-radius:1px;height:4px;transition:height .2s;}
 .player.playing .player-bars span{animation:barBounce .9s ease-in-out infinite;}
-.player-bars span:nth-child(2){animation-delay:.15s;} .player-bars span:nth-child(3){animation-delay:.3s;}
+.player-bars span:nth-child(1){animation-delay:0s;}
+.player-bars span:nth-child(2){animation-delay:.15s;}
+.player-bars span:nth-child(3){animation-delay:.3s;}
 @keyframes barBounce{0%,100%{height:4px;}50%{height:12px;}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
-@media(max-width:1100px){.nav-links{gap:1.1rem;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}}
+@media(max-width:1100px){
+  .nav-links{gap:1.1rem;}
+}
 @media(max-width:900px){
   .nav-links{display:none;} .hamburger{display:flex;}
   .search-wrap.open .search-input{width:120px;}
-  .hero{min-height:78vh;}
+  .hero{min-height:78vh;background-position:center 14%;}
   .hero-content{padding:0 1.2rem 2.6rem;}
   .shelf,.strip,.cover{padding-left:1.2rem;padding-right:1.2rem;}
-  .row-head,.filter-row,.empty-note{padding-left:1.2rem;padding-right:1.2rem;}
+  .row-head,.filter-row{padding:0 1.2rem;}
   .rail{padding-left:1.2rem;padding-right:1.2rem;}
   .rail .rcard{width:150px;}
+  .rail.landscape-rail .rcard{width:220px;}
   .rcard:hover{transform:scale(1.1);}
   .shelf-grid{grid-template-columns:1fr;}
   .rail-arrow{display:none;}
@@ -196,10 +214,10 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
   <div class="nav-right">
     <div class="search-wrap" id="searchWrap">
       <input type="text" class="search-input" id="searchInput" placeholder="Titles, dates, moments...">
-      <button class="nav-icon-btn" id="searchBtn" aria-label="Search"><i class="bi bi-search"></i></button>
+      <button class="nav-icon-btn" id="searchBtn"><i class="bi bi-search"></i></button>
     </div>
     <div class="bell-wrap">
-      <button class="nav-icon-btn" title="Notifications" aria-label="Notifications"><i class="bi bi-bell"></i></button>
+      <button class="nav-icon-btn" id="bellBtn" title="Notifications"><i class="bi bi-bell"></i></button>
       <span class="bell-dot"></span>
     </div>
     <div class="profile-wrap" data-nav="home">
@@ -209,24 +227,33 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
 <div class="mobile-drawer" id="mobileDrawer">
-  <a data-nav="home">Home</a><a data-nav="photos">Photos</a><a data-nav="videos">Videos</a>
-  <a data-nav="calls">Video Calls</a><a data-nav="inspire">Inspire With Saddam</a><a data-nav="uni">Uni Presentations</a>
-  <a data-nav="queenstown">Queenstown</a><a data-nav="family">Family</a><a data-nav="grad">Graduation</a><a data-nav="mylist">My List</a>
+  <a data-nav="home">Home</a>
+  <a data-nav="photos">Photos</a>
+  <a data-nav="videos">Videos</a>
+  <a data-nav="calls">Video Calls</a>
+  <a data-nav="inspire">Inspire With Saddam</a>
+  <a data-nav="uni">Uni Presentations</a>
+  <a data-nav="queenstown">Queenstown</a>
+  <a data-nav="family">Family</a>
+  <a data-nav="grad">Graduation</a>
+  <a data-nav="mylist">My List</a>
 </div>
 
-<!-- HOME -->
+<!-- ============ HOME VIEW ============ -->
 <div class="view active-view" id="view-home">
-  <section class="hero">
+
+  <section class="hero" style="background-image:linear-gradient(180deg, rgba(10,10,10,.15) 0%, rgba(10,10,10,.05) 30%, rgba(10,10,10,.55) 68%, var(--bg) 100%),linear-gradient(90deg, rgba(10,10,10,.92) 0%, rgba(10,10,10,.55) 32%, rgba(10,10,10,.05) 65%),url('IMG_3435.jpg');background-size:cover;background-position:center 50%;">
     <div class="hero-content">
       <div class="hero-badge"><i class="bi bi-award-fill"></i>&nbsp;N ORIGINAL</div>
       <h1 class="title">FULL TIME, <span class="r">NOT FULL STOP</span></h1>
       <div class="hero-meta">
         <span class="match-pct">100% Match</span>
         <span class="age-badge">G</span>
-        <span>2025–26</span><span class="dot"></span>
-        <span>Ongoing Series</span><span class="dot"></span>
+        <span>2025–26</span>
+        <span class="dot"></span>
+        <span>Ongoing Series</span>
+        <span class="dot"></span>
         <span><i class="bi bi-hd"></i> HD</span>
       </div>
       <div class="action-row">
@@ -244,12 +271,54 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
   <section class="shelf">
     <h2>On the shelf</h2>
     <div class="shelf-grid">
-      <div class="tile" data-nav="photos"><img src="91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG" alt="Photos"><div class="tile-body"><div class="tile-kicker">Issue 01 · Photo Gallery</div><div class="tile-title">Photos</div><div class="tile-sub">Every smile, captured</div></div></div>
-      <div class="tile" data-nav="videos"><img src="IMG_6640.JPG" alt="Videos"><div class="tile-body"><div class="tile-kicker">Issue 02 · Video Gallery</div><div class="tile-title">Videos</div><div class="tile-sub">Moments that kept moving</div></div></div>
-      <div class="tile" data-nav="queenstown"><img src="q3.jpeg" alt="Queenstown"><div class="tile-body"><div class="tile-kicker">Issue 03 · Special Trip</div><div class="tile-title">Queenstown</div><div class="tile-sub">Mountains, lakes, one trip south</div></div></div>
-      <div class="tile" data-nav="family"><img src="WhatsApp Image 2026-09-15 at 14.15.51.jpeg" alt="Family"><div class="tile-body"><div class="tile-kicker">Issue 04 · Home Base</div><div class="tile-title">Family</div><div class="tile-sub">The people behind it all</div></div></div>
-      <div class="tile" data-nav="calls"><img src="WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg" alt="Video Calls"><div class="tile-body"><div class="tile-kicker">Issue 06 · Long Distance</div><div class="tile-title">Video Calls</div><div class="tile-sub">Miles apart, still on the line</div></div></div>
-      <div class="tile" data-nav="grad"><img src="IMG_0802.jpg" alt="Graduation"><div class="tile-body"><div class="tile-kicker">Issue 09 · The Big Day</div><div class="tile-title">Graduation</div><div class="tile-sub">Cap, gown, done</div></div></div>
+      <div class="tile" data-nav="photos">
+        <img src="91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG" alt="Photos">
+        <div class="tile-body">
+          <div class="tile-kicker">Issue 01 · Photo Gallery</div>
+          <div class="tile-title">Photos</div>
+          <div class="tile-sub">Every smile, captured</div>
+        </div>
+      </div>
+      <div class="tile" data-nav="videos">
+        <img src="IMG_6640.JPG" alt="Videos">
+        <div class="tile-body">
+          <div class="tile-kicker">Issue 02 · Video Gallery</div>
+          <div class="tile-title">Videos</div>
+          <div class="tile-sub">Moments that kept moving</div>
+        </div>
+      </div>
+      <div class="tile" data-nav="queenstown">
+        <img src="q3.jpeg" alt="Queenstown">
+        <div class="tile-body">
+          <div class="tile-kicker">Issue 03 · Special Trip</div>
+          <div class="tile-title">Queenstown</div>
+          <div class="tile-sub">Mountains, lakes, one trip south</div>
+        </div>
+      </div>
+      <div class="tile" data-nav="family">
+        <img src="assets/family/WhatsApp Image 2026-09-15 at 14.15.51.jpeg" alt="Family">
+        <div class="tile-body">
+          <div class="tile-kicker">Issue 04 · Home Base</div>
+          <div class="tile-title">Family</div>
+          <div class="tile-sub">The people behind it all</div>
+        </div>
+      </div>
+      <div class="tile" data-nav="calls">
+        <img src="assets/videocall/WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg" alt="Video Calls">
+        <div class="tile-body">
+          <div class="tile-kicker">Issue 06 · Long Distance</div>
+          <div class="tile-title">Video Calls</div>
+          <div class="tile-sub">Miles apart, still on the line</div>
+        </div>
+      </div>
+      <div class="tile" data-nav="grad">
+        <img src="assets/grad/grad1.jpg" alt="Graduation">
+        <div class="tile-body">
+          <div class="tile-kicker">Issue 09 · The Big Day</div>
+          <div class="tile-title">Graduation</div>
+          <div class="tile-sub">Cap, gown, done</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -268,48 +337,161 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
       <div class="footer-sub">✦ The Chronicle · Front Page ✦</div>
     </div>
     <div class="footer-links">
-      <a data-nav="photos">Photos</a><a data-nav="videos">Videos</a><a data-nav="calls">Video Calls</a><a data-nav="queenstown">Queenstown</a>
-      <a data-nav="family">Family</a><a data-nav="grad">Graduation</a><a data-nav="mylist">My List</a>
+      <a>Photos</a><a>Videos</a><a>Video Calls</a><a>Queenstown</a>
+      <a>Family</a><a>Graduation</a><a>My List</a>
+    </div>
+  </footer>
+</div><!-- /view-home -->
+
+<!-- ============ PHOTOS VIEW ============ -->
+<div class="view" id="view-photos">
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 01 · 2025–2026 ✦</p>
+    <h1 class="cover-title">Photo <span>Gallery</span></h1>
+    <p class="cover-sub">Every argument, every joke, every small moment — somehow becomes a memory worth keeping.</p>
+  </section>
+  <div class="filter-row" id="photoFilters"></div>
+  <section class="rows-section" id="rows-photos"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 01 · Photos ✦</div>
     </div>
   </footer>
 </div>
 
-<!-- GALLERY VIEWS (filled by script) -->
-<div class="view" id="view-photos">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 01 · 2025–2026 ✦</p><h1 class="cover-title">Photo <span>Gallery</span></h1><p class="cover-sub">Every argument, every joke, every small moment — somehow becomes a memory worth keeping.</p></section>
-  <div class="filter-row" id="photosFilters"></div><section class="rows-section" id="rows-photos"></section>
-</div>
+<!-- ============ VIDEOS VIEW ============ -->
 <div class="view" id="view-videos">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 02 · Moving Pictures ✦</p><h1 class="cover-title">Video <span>Gallery</span></h1><p class="cover-sub">The chaos, the complaints, the laughs — somehow all became clips worth replaying. Hover to preview, click to play.</p></section>
-  <div class="filter-row" id="videosFilters"></div><section class="rows-section" id="rows-videos"></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 02 · Moving Pictures ✦</p>
+    <h1 class="cover-title">Video <span>Gallery</span></h1>
+    <p class="cover-sub">The chaos, the complaints, the laughs — somehow all became clips worth replaying. Hover to preview, click to play.</p>
+  </section>
+  <div class="filter-row" id="videoFilters"></div>
+  <section class="rows-section" id="rows-videos"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 02 · Videos ✦</div>
+    </div>
+  </footer>
 </div>
+
+<!-- ============ QUEENSTOWN VIEW ============ -->
 <div class="view" id="view-queenstown">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 03 · Special Trip ✦</p><h1 class="cover-title">Queenstown <span>Trip</span></h1><p class="cover-sub">Mountains, lakes, and one unforgettable trip south.</p></section>
-  <div class="filter-row" id="queenstownFilters"></div><section class="rows-section" id="rows-queenstown"></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 03 · Special Trip ✦</p>
+    <h1 class="cover-title">Queenstown <span>Trip</span></h1>
+    <p class="cover-sub">Mountains, lakes, and one unforgettable trip south.</p>
+  </section>
+  <section class="rows-section" id="rows-queenstown"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 03 · Queenstown ✦</div>
+    </div>
+  </footer>
 </div>
+
+<!-- ============ FAMILY VIEW ============ -->
 <div class="view" id="view-family">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 04 · Home Base ✦</p><h1 class="cover-title">The <span>Family</span></h1><p class="cover-sub">The people who were cheering loudest before the cap even hit the air.</p></section>
-  <div class="filter-row" id="familyFilters"></div><section class="rows-section" id="rows-family"></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 04 · Home Base ✦</p>
+    <h1 class="cover-title">The <span>Family</span></h1>
+    <p class="cover-sub">The people who were cheering loudest before the cap even hit the air.</p>
+  </section>
+  <div class="filter-row" id="familyFilters"></div>
+  <section class="rows-section" id="rows-family"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 04 · Family ✦</div>
+    </div>
+  </footer>
 </div>
+
+<!-- ============ VIDEO CALLS VIEW ============ -->
 <div class="view" id="view-calls">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 06 · Long Distance ✦</p><h1 class="cover-title">Video <span>Calls</span></h1><p class="cover-sub">Miles apart, still showing up on the line — the calls that kept it close.</p></section>
-  <div class="filter-row" id="callsFilters"></div><section class="rows-section" id="rows-calls"></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 06 · Long Distance ✦</p>
+    <h1 class="cover-title">Video <span>Calls</span></h1>
+    <p class="cover-sub">Miles apart, still showing up on the line — the calls that kept it close.</p>
+  </section>
+  <div class="filter-row" id="callsFilters"></div>
+  <section class="rows-section" id="rows-calls"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 06 · Video Calls ✦</div>
+    </div>
+  </footer>
 </div>
+
+<!-- ============ INSPIRE WITH SADDAM VIEW ============ -->
 <div class="view" id="view-inspire">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 07 · Words That Stuck ✦</p><h1 class="cover-title">Inspire <span>With Saddam</span></h1><p class="cover-sub">The pep talks, the pump-up moments, the clips worth rewatching when you need a push.</p></section>
-  <div class="filter-row" id="inspireFilters"></div><section class="rows-section" id="rows-inspire"></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 07 · Words That Stuck ✦</p>
+    <h1 class="cover-title">Inspire <span>With Saddam</span></h1>
+    <p class="cover-sub">The pep talks, the pump-up moments, the clips worth rewatching when you need a push.</p>
+  </section>
+  <div class="filter-row" id="inspireFilters"></div>
+  <section class="rows-section" id="rows-inspire"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 07 · Inspire With Saddam ✦</div>
+    </div>
+  </footer>
 </div>
+
+<!-- ============ UNI PRESENTATIONS VIEW ============ -->
 <div class="view" id="view-uni">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 08 · Campus Cuts ✦</p><h1 class="cover-title">Uni <span>Presentations</span></h1><p class="cover-sub">The slides, the stage fright, the mic-drop moments — every presentation on record.</p></section>
-  <div class="filter-row" id="uniFilters"></div><section class="rows-section" id="rows-uni"></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 08 · Campus Cuts ✦</p>
+    <h1 class="cover-title">Uni <span>Presentations</span></h1>
+    <p class="cover-sub">The slides, the stage fright, the mic-drop moments — every presentation on record.</p>
+  </section>
+  <div class="filter-row" id="uniFilters"></div>
+  <section class="rows-section" id="rows-uni"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 08 · Uni Presentations ✦</div>
+    </div>
+  </footer>
 </div>
+
+<!-- ============ GRADUATION VIEW ============ -->
 <div class="view" id="view-grad">
-  <section class="cover"><p class="cover-eyebrow">✦ Issue No. 09 · The Big Day ✦</p><h1 class="cover-title">Grad<span>uation</span></h1><p class="cover-sub">Cap, gown, and a degree with your name on it. The day it all paid off.</p></section>
-  <div class="filter-row" id="gradFilters"></div><section class="rows-section" id="rows-grad"></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Issue No. 09 · The Big Day ✦</p>
+    <h1 class="cover-title">Grad<span>uation</span></h1>
+    <p class="cover-sub">Cap, gown, and a degree with your name on it. The day it all paid off.</p>
+  </section>
+  <div class="filter-row" id="gradFilters"></div>
+  <section class="rows-section" id="rows-grad"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ Issue 09 · Graduation ✦</div>
+    </div>
+  </footer>
 </div>
+
+<!-- ============ MY LIST VIEW ============ -->
 <div class="view" id="view-mylist">
-  <section class="cover"><p class="cover-eyebrow">✦ Saved For Later ✦</p><h1 class="cover-title">My <span>List</span></h1><p class="cover-sub">Photos and clips you've bookmarked. Tap the <i class="bi bi-check-lg"></i>/<i class="bi bi-plus-lg"></i> on any card to add or remove it here.</p></section>
+  <section class="cover">
+    <p class="cover-eyebrow">✦ Saved For Later ✦</p>
+    <h1 class="cover-title">My <span>List</span></h1>
+    <p class="cover-sub">Photos and clips you've bookmarked. Tap the <i class="bi bi-check-lg"></i>/<i class="bi bi-plus-lg"></i> on any card to add or remove it here.</p>
+  </section>
   <section class="rows-section" id="rows-mylist"></section>
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">Saddam <span>Ansari</span></div>
+      <div class="footer-sub">✦ My List ✦</div>
+    </div>
+  </footer>
 </div>
 
 <div class="lightbox" id="lightbox">
@@ -320,335 +502,746 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
   <div class="lb-counter" id="lbCounter"></div>
   <div class="lb-mylist" id="lbMylist"><i class="bi bi-plus-lg"></i><span>My List</span></div>
 </div>
+
 <div class="lightbox" id="vlightbox">
   <button class="lb-close" id="vlbClose"><i class="bi bi-x-lg"></i></button>
   <button class="lb-nav lb-prev" id="vlbPrev"><i class="bi bi-chevron-left"></i></button>
-  <video class="lightbox-video" id="vlbVideo" controls playsinline autoplay></video>
+  <video class="lightbox-video" id="vlbVideo" controls autoplay></video>
   <button class="lb-nav lb-next" id="vlbNext"><i class="bi bi-chevron-right"></i></button>
   <div class="lb-counter" id="vlbCounter"></div>
   <div class="lb-mylist" id="vlbMylist"><i class="bi bi-plus-lg"></i><span>My List</span></div>
 </div>
 
 <div class="player" id="player">
-  <button class="player-btn" id="playBtn" aria-label="Play theme"><i class="bi bi-play-fill" id="playIcon"></i></button>
+  <button class="player-btn" id="playBtn"><i class="bi bi-play-fill" id="playIcon"></i></button>
   <span class="player-label">Theme</span>
   <div class="player-bars"><span></span><span></span><span></span></div>
-  <audio id="bgAudio" loop src="kalyani.m4a" preload="none"></audio>
+  <audio id="bgAudio" loop><source src="kalyani.m4a" type="audio/mp4"></audio>
 </div>
 
 <script>
-/* ───────── DATA ───────── */
-const g=(label,cap,files,prefix='')=>({label,items:files.map(f=>({src:prefix+f,cap}))});
-const GRAD_DIR='';
-const GRAD_PHOTOS=['IMG_0802','IMG_0816','IMG_0803','IMG_0811','IMG_0814','IMG_0821','IMG_0824','IMG_0835','IMG_0847','IMG_0849','IMG_0850'].map(n=>n+'.jpg');
-const GRAD_VIDEOS=Array.from({length:15},(_,i)=>`gradv${i+1}.mp4`);
-const INSPIRE_FILES=['IMG_0142','IMG_0147','IMG_0148','IMG_0151'].map(n=>`${n}.mov`);
+const mainNav=document.getElementById('mainNav');
+window.addEventListener('scroll', ()=>{ mainNav.classList.toggle('scrolled', window.scrollY>40); }, {passive:true});
 
-const PHOTO_GROUPS=[
-  g("August 2025 · MSB Study & Memories","Aug 2025",["91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG","IMG_1745.jpg","IMG_2908.jpg","IMG_6760.jpg"]),
-  g("September 2025 · Study","Sep 2025",["IMG_2696.jpg"]),
-  g("November 2025 · Memories","Nov 2025",["IMG_3435.jpg","IMG_EC927D1CC3E2-1.jpeg"]),
-  g("March 2026 · Study","Mar 2026",["2DD8C305-73CF-4233-8423-1D6B0A0390C8_007.jpg","4365FC69-2A9F-4C7E-B466-EF6DFB3320C8_030.jpg","4365FC69-2A9F-4C7E-B466-EF6DFB3320C8_035.jpg","4365FC69-2A9F-4C7E-B466-EF6DFB3320C8_040.jpg","6BC82F2E-3B32-4556-8621-42A8E5661529_025.jpg","6BC82F2E-3B32-4556-8621-42A8E5661529_056.jpg","IMG_6755.jpg","att.TJA1VyAO3xTnNwer--UsoMwWT8hJtxi1N36ZhISmbno.jpg","ac788850-4f85-4673-ba06-0d6beb0f7d99.jpeg","658177068_26120155027627619_3090402980393998288_n.jpg","IMG_6640.JPG"]),
-  g("Solo Photos","Mar 2026",["IMG_2049.jpg","IMG_7062.jpg","IMG_4941.jpg"]),
-  g("June 2026 · Study","Jun 2026",["IMG_8309.JPG"]),
-  g("Graduation · The Big Day","Graduation",GRAD_PHOTOS,GRAD_DIR)
-];
-const VIDEO_GROUPS=[
-  g("August 2025 · Study","Aug 2025",["IMG_2697.MOV","AB35B6B3-A8D3-4F8F-9130-7C5B7AD86964.MOV","64A8E8A0-24E3-4297-8673-79F71551F2B5.MP4"]),
-  g("Video Call 2025 · Fun Moments","Sep 2025",["995799a3ec64401189fbc5bd862344c0.MOV","ScreenRecording_04-01-2026 21-50-34_1.MP4"]),
-  g("March - July 2026","Mar 2026",["2DD8C305-73CF-4233-8423-1D6B0A0390C8.MP4","02EE3906-1246-4634-84D4-5C21718AE272.MP4","6BC82F2E-3B32-4556-8621-42A8E5661529.MP4","4365FC69-2A9F-4C7E-B466-EF6DFB3320C8.MP4","8353BA76-F4C2-4AAB-8F22-AF7F3023CC7A.MP4"]),
-  g("Gym 2026","Mar 2026",["1786175174129_instaPV.mp4"]),
-  g("Inspire With Saddam","Sep 2026",INSPIRE_FILES),
-  g("Graduation · The Big Day","Graduation",GRAD_VIDEOS,GRAD_DIR)
-];
-const QUEENSTOWN_GROUPS=[g("June 2026 · Queenstown","Jun 2026",["q1.jpeg","q2.jpg","q4.jpeg","q3.jpeg","WhatsApp Image 2026-07-03 at 17.52.02.jpeg"])];
-const FAMILY_GROUPS=[{label:"Family · Cheering Him On",items:[
-  ...["WhatsApp Image 2026-09-07 at 12.10.17.jpeg","WhatsApp Image 2026-09-15 at 14.15.50.jpeg","WhatsApp Image 2026-09-15 at 14.15.51.jpeg","1bf81dc1-41e3-4f4f-9ae0-04b7ce15465a.jpeg","d98184a4-3dc7-4369-82c9-67f202beba0d.jpeg"].map(f=>({src:f,cap:"Cheering Him On"})),
-  ...["FB_IMG_1730692392265.jpg","FB_IMG_1730693765061.jpg","IMG20231122215901.jpg","IMG20231122220109.jpg","IMG20231122230907.jpg","IMG20231124171842.jpg","WhatsApp Image 2026-09-15 at 14.15.53.jpeg"].map(f=>({src:f,cap:"Jun 2026"}))
-]}];
-const CALLS_GROUPS=[
-  g("Video Calls","Sep 2026",["IMG_7276%202.PNG","photo-output_1.jpeg","IMG_7917.jpg","WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg","IMG_0108.PNG"]),
-  g("Video Calls · Recordings","Mar 2026",["WhatsApp%20Video%202026-09-25%20at%2019.49.56.mp4","ScreenRecording_04-01-2026 21-50-34_1.MP4"])
-];
-const INSPIRE_GROUPS=[g("Inspire With Saddam","Sep 2026",INSPIRE_FILES)];
-const UNI_FILES=["Recording Mar 26, 2026, 2_51_47 PM (1).mp4","Recording Mar 26, 2026, 2_51_47 PM (2).mp4","Recording Mar 26, 2026, 2_51_47 PM.mp4","Recording Mar 26, 2026, 3_00_55 PM (1).mp4","Recording Mar 26, 2026, 3_00_55 PM (2).mp4","Recording Mar 26, 2026, 3_00_55 PM.mp4","Recording Mar 26, 2026, 3_52_09 PM (1).mp4","Recording Mar 26, 2026, 3_52_09 PM (2).mp4","Recording Mar 26, 2026, 3_52_09 PM.mp4","Recording Mar 31, 2026, 11_36 AM.mp4","Recording Mar 31, 2026, 11_53 AM.mp4","Recording Mar 31, 2026, 12_16 PM.mp4"];
-const UNI_GROUPS=[g("Uni Presentations","Mar 2026",UNI_FILES)];
-const GRAD_GROUPS=[g("Graduation · Photos","Graduation",GRAD_PHOTOS,GRAD_DIR),g("Graduation · Videos","Graduation",GRAD_VIDEOS,GRAD_DIR)];
-
-const VIEWS={photos:PHOTO_GROUPS,videos:VIDEO_GROUPS,calls:CALLS_GROUPS,inspire:INSPIRE_GROUPS,uni:UNI_GROUPS,queenstown:QUEENSTOWN_GROUPS,family:FAMILY_GROUPS,grad:GRAD_GROUPS};
-const EMPTY_MSG={calls:'the main folder',inspire:'the main folder',uni:'the main folder',family:'the main folder'};
-
-/* ───────── HELPERS ───────── */
-const $=id=>document.getElementById(id);
-const isVid=s=>/\.(mp4|m4v|mov|webm)(\?|#|$)/i.test(s);
-/* No "type" attribute on purpose: Chrome/Edge reject video/quicktime and skip the file.
-   Putting src straight on <video> lets every browser sniff the format itself.
-   #t=0.1 makes the browser paint a first-frame thumbnail without any JS. */
-const videoTag=src=>`<video muted loop playsinline preload="metadata" src="${src}#t=0.1"></video>`;
-const itemKey=i=>i.src;
-const myList=new Set(), likeSet=new Set();
-const flat={}; // per-view items, used by My List
-
-const mainNav=$('mainNav');
-addEventListener('scroll',()=>mainNav.classList.toggle('scrolled',scrollY>40),{passive:true});
-
-const cardObserver=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*35);cardObserver.unobserve(e.target);}});
-},{threshold:.08});
-const observeCards=sel=>document.querySelectorAll(sel).forEach(el=>{if(!el.classList.contains('visible'))cardObserver.observe(el);});
-
-/* ───────── CARDS ───────── */
-function ovIcons(item){
-  const k=itemKey(item),liked=likeSet.has(k),saved=myList.has(k);
-  return `<div class="ov-icons">
-    <div class="ov-icon play"><i class="bi bi-play-fill"></i></div>
-    <div class="ov-icon mylist-ov${saved?' active':''}" data-key="${k}"><i class="bi bi-${saved?'check-lg':'plus-lg'}"></i></div>
-    <div class="ov-icon like-ov${liked?' active':''}"><i class="bi bi-hand-thumbs-up${liked?'-fill':''}"></i></div>
-    <div class="ov-icon"><i class="bi bi-chevron-down"></i></div>
-  </div><div class="ov-meta"><span class="match">98% Match</span><span class="cap">${item.cap||''}</span></div>`;
-}
-function badge(item){
-  const k=itemKey(item),a=myList.has(k);
-  return `<div class="mylist-badge${a?' active':''}" data-key="${k}"><i class="bi bi-${a?'check-lg':'plus-lg'}"></i></div>`;
-}
-function toggleMyList(item){
-  const k=itemKey(item);
-  myList.has(k)?myList.delete(k):myList.add(k);
-  document.querySelectorAll('[data-key]').forEach(b=>{
-    if(b.dataset.key!==k)return;
-    const on=myList.has(k);
-    b.classList.toggle('active',on);
-    const i=b.querySelector('i'); if(i)i.className=on?'bi bi-check-lg':'bi bi-plus-lg';
-  });
-}
-function makeCard(item,{onOpen,withBadge=true,afterToggle}={}){
-  const video=isVid(item.src);
-  const card=document.createElement('div');
-  card.className='rcard'; card.dataset.cap=item.cap||'';
-  card.innerHTML=(video?videoTag(item.src):`<img src="${item.src}" alt="Photo" loading="lazy">`)
-    +(withBadge?badge(item):'')
-    +`<div class="center-play"><i class="bi bi-${video?'play-fill':'arrows-angle-expand'}"></i></div>`
-    +`<div class="info-ov">${ovIcons(item)}</div>`;
-  if(video){
-    const v=card.querySelector('video');
-    card.addEventListener('mouseenter',()=>{v.currentTime=0;v.play().catch(()=>{});});
-    card.addEventListener('mouseleave',()=>{v.pause();});
-  }
-  card.addEventListener('click',e=>{if(e.target.closest('.mylist-badge,.mylist-ov,.like-ov'))return;onOpen();});
-  const doToggle=e=>{e.stopPropagation();toggleMyList(item);if(afterToggle)afterToggle();};
-  card.querySelector('.mylist-badge')?.addEventListener('click',doToggle);
-  card.querySelector('.mylist-ov').addEventListener('click',doToggle);
-  const like=card.querySelector('.like-ov');
-  like.addEventListener('click',e=>{
-    e.stopPropagation();
-    const k=itemKey(item);
-    likeSet.has(k)?likeSet.delete(k):likeSet.add(k);
-    const on=likeSet.has(k);
-    like.classList.toggle('active',on);
-    like.querySelector('i').className='bi bi-hand-thumbs-up'+(on?'-fill':'');
-  });
-  return card;
-}
-function addArrows(block){
-  const wrap=block.querySelector('.rail-wrap'),rail=block.querySelector('.rail');
-  [['left','chevron-left',-1],['right','chevron-right',1]].forEach(([cls,ic,dir])=>{
-    const b=document.createElement('button');
-    b.className='rail-arrow '+cls; b.innerHTML=`<i class="bi bi-${ic}"></i>`;
-    b.addEventListener('click',()=>rail.scrollBy({left:dir*rail.clientWidth*.85,behavior:'smooth'}));
-    wrap.appendChild(b);
-  });
-}
-
-/* Builds every gallery. A group is a video group if its first file is a video, otherwise a photo group. */
-function buildRows(containerId,groups){
-  const container=$(containerId); container.innerHTML='';
-  const photos=[],videos=[];
-  groups.forEach(group=>{
-    const video=group.items.length>0&&isVid(group.items[0].src);
-    const n=group.items.length;
-    const block=document.createElement('div'); block.className='row-block';
-    block.innerHTML=`<div class="row-head"><h3>${group.label}</h3><span>${n} ${video?(n===1?'clip':'clips'):(n===1?'photo':'photos')}</span></div><div class="rail-wrap"><div class="rail"></div></div>`;
-    const rail=block.querySelector('.rail');
-    group.items.forEach(item=>{
-      const list=isVid(item.src)?videos:photos;
-      list.push(item);
-      const idx=list.length-1;
-      rail.appendChild(makeCard(item,{onOpen:()=>isVid(item.src)?openVideoLb(videos,idx):openPhotoLb(photos,idx)}));
+const searchWrap=document.getElementById('searchWrap'), searchBtn=document.getElementById('searchBtn'), searchInput=document.getElementById('searchInput');
+searchBtn.addEventListener('click', ()=>{ searchWrap.classList.toggle('open'); if(searchWrap.classList.contains('open')) searchInput.focus(); });
+searchInput.addEventListener('input', ()=>{ filterBySearch(searchInput.value.trim().toLowerCase()); });
+function filterBySearch(q){
+  document.querySelectorAll('.view.active-view .row-block').forEach(block=>{
+    if(!q){ block.style.display=''; block.querySelectorAll('.rcard').forEach(c=>c.style.display=''); return; }
+    let anyVisible=false;
+    block.querySelectorAll('.rcard').forEach(card=>{
+      const cap=(card.dataset.cap||'').toLowerCase();
+      const label=(block.querySelector('.row-head h3')?.textContent||'').toLowerCase();
+      const match = cap.includes(q) || label.includes(q);
+      card.style.display = match ? '' : 'none';
+      if(match) anyVisible=true;
     });
-    container.appendChild(block); addArrows(block);
+    block.style.display = anyVisible ? '' : 'none';
   });
-  return [...photos,...videos];
-}
-function buildFilters(id,groups,targetId){
-  const el=$(id); if(!el)return; el.innerHTML='';
-  const mk=(text,fn)=>{
-    const c=document.createElement('button'); c.className='chip'; c.textContent=text;
-    c.addEventListener('click',()=>{el.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');fn();});
-    el.appendChild(c); return c;
-  };
-  mk('All',()=>document.querySelectorAll(`#${targetId} .row-block`).forEach(b=>b.style.display='')).classList.add('active');
-  if(groups.length<2)return;
-  groups.forEach((gr,i)=>mk(gr.label.split('·')[0].trim(),()=>
-    document.querySelectorAll(`#${targetId} .row-block`).forEach((b,bi)=>b.style.display=bi===i?'':'none')));
 }
 
-/* ───────── TOP 10 ───────── */
-function buildTop10(){
-  const picks=[PHOTO_GROUPS[3].items[9],QUEENSTOWN_GROUPS[0].items[3],VIDEO_GROUPS[2].items[0],PHOTO_GROUPS[0].items[0],VIDEO_GROUPS[0].items[0],PHOTO_GROUPS[4].items[0],VIDEO_GROUPS[2].items[3],QUEENSTOWN_GROUPS[0].items[0],VIDEO_GROUPS[1].items[0],PHOTO_GROUPS[3].items[3]];
-  const block=document.createElement('div'); block.className='row-block top10-row';
-  block.innerHTML=`<div class="row-head"><h3>Top 10 Memories</h3><span>Most replayed</span></div><div class="rail-wrap"><div class="rail"></div></div>`;
-  const rail=block.querySelector('.rail');
-  picks.forEach((item,i)=>{
-    const wrap=document.createElement('div'); wrap.className='top10-card';
-    wrap.innerHTML=`<div class="top10-num">${i+1}</div>`;
-    const card=makeCard(item,{withBadge:false,onOpen:()=>isVid(item.src)?openVideoLb([item],0):openPhotoLb([item],0)});
-    card.style.width='150px';
-    wrap.appendChild(card); rail.appendChild(wrap);
-  });
-  $('rows-top10').appendChild(block); addArrows(block);
-  observeCards('#rows-top10 .rcard');
-}
-
-/* ───────── MY LIST ───────── */
-function renderMyList(){
-  const container=$('rows-mylist'); container.innerHTML='';
-  const seen=new Set();
-  const items=Object.values(flat).flat().filter(it=>{const k=itemKey(it);if(!myList.has(k)||seen.has(k))return false;seen.add(k);return true;});
-  if(!items.length){container.innerHTML='<p class="empty-note">Nothing saved yet. Browse a gallery and tap the + on any card. (Open the galleries at least once so they can be listed here.)</p>';return;}
-  const vids=items.filter(i=>isVid(i.src)),pics=items.filter(i=>!isVid(i.src));
-  const block=document.createElement('div'); block.className='row-block';
-  block.innerHTML=`<div class="row-head"><h3>Saved</h3><span>${items.length} items</span></div><div class="rail-wrap"><div class="rail"></div></div>`;
-  const rail=block.querySelector('.rail');
-  items.forEach(item=>rail.appendChild(makeCard(item,{
-    afterToggle:renderMyList,
-    onOpen:()=>isVid(item.src)?openVideoLb(vids,vids.indexOf(item)):openPhotoLb(pics,pics.indexOf(item))
-  })));
-  container.appendChild(block); addArrows(block);
-  observeCards('#view-mylist .rcard');
-}
-
-/* ───────── NAVIGATION ───────── */
 const viewNames=['home','photos','videos','calls','inspire','uni','queenstown','family','grad','mylist'];
-const views={}; viewNames.forEach(n=>views[n]=$('view-'+n));
-const inited={};
-const searchWrap=$('searchWrap'),searchInput=$('searchInput'),hamburger=$('hamburger'),mobileDrawer=$('mobileDrawer');
+const views={}; viewNames.forEach(n=>views[n]=document.getElementById('view-'+n));
+let inited={};
 
-function initView(name){
-  const groups=VIEWS[name]; if(!groups)return;
-  const hasItems=groups.some(x=>x.items.length>0);
-  if(!hasItems){$('rows-'+name).innerHTML=`<p class="empty-note">Nothing added yet — drop files into <code>${EMPTY_MSG[name]||'the main folder'}</code> and list them in the data section of the script.</p>`;return;}
-  flat[name]=buildRows('rows-'+name,groups);
-  buildFilters(name+'Filters',groups,'rows-'+name);
-}
 function goTo(name){
   if(!views[name])return;
   viewNames.forEach(n=>views[n].classList.toggle('active-view',n===name));
-  document.querySelectorAll('.nav-links a,.mobile-drawer a').forEach(a=>a.classList.toggle('active',a.dataset.nav===name));
-  scrollTo({top:0,behavior:'auto'});
+  document.querySelectorAll('.nav-links a, .mobile-drawer a').forEach(a=>a.classList.toggle('active',a.dataset.nav===name));
+  window.scrollTo({top:0,behavior:'auto'});
   mobileDrawer.classList.remove('open'); hamburger.classList.remove('open');
-  searchWrap.classList.remove('open'); searchInput.value=''; filterBySearch('');
-  if(name==='mylist') renderMyList();
-  else if(!inited[name]){inited[name]=true;initView(name);}
-  requestAnimationFrame(()=>observeCards(`#view-${name} .rcard`));
+  searchWrap.classList.remove('open'); searchInput.value='';
+  if(name==='mylist'){ renderMyList(); }
+  else if(!inited[name]){ inited[name]=true; initView(name); }
+  requestAnimationFrame(()=>{
+    document.querySelectorAll(`#view-${name} .rcard:not(.visible)`).forEach(el=>cardObserver.observe(el));
+  });
 }
-document.querySelectorAll('[data-nav]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();goTo(el.dataset.nav);}));
-hamburger.addEventListener('click',()=>{const o=hamburger.classList.toggle('open');mobileDrawer.classList.toggle('open',o);});
+document.querySelectorAll('[data-nav]').forEach(el=>{ el.addEventListener('click', e=>{ e.preventDefault(); goTo(el.dataset.nav); }); });
 
-/* ───────── SEARCH ───────── */
-$('searchBtn').addEventListener('click',()=>{searchWrap.classList.toggle('open');if(searchWrap.classList.contains('open'))searchInput.focus();});
-searchInput.addEventListener('input',()=>filterBySearch(searchInput.value.trim().toLowerCase()));
-function filterBySearch(q){
-  document.querySelectorAll('.view.active-view .row-block').forEach(block=>{
-    const label=(block.querySelector('.row-head h3')?.textContent||'').toLowerCase();
-    let any=false;
-    block.querySelectorAll('.rcard').forEach(c=>{
-      const m=!q||(c.dataset.cap||'').toLowerCase().includes(q)||label.includes(q);
-      c.style.display=m?'':'none'; if(m)any=true;
+const hamburger=document.getElementById('hamburger'), mobileDrawer=document.getElementById('mobileDrawer');
+hamburger.addEventListener('click', ()=>{ const open=hamburger.classList.toggle('open'); mobileDrawer.classList.toggle('open', open); });
+
+const cardObserver=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'), i*35); cardObserver.unobserve(e.target); } });
+},{threshold:.08});
+
+const myList = new Set();
+const likeSet = new Set();
+function itemKey(item){ return item.src; }
+/* .MOV files declared as video/mp4 get silently rejected by Safari/iOS even
+   though Chrome tolerates it — detect the real extension and use the right
+   MIME type so clips actually play everywhere. */
+function getVideoType(src){
+  const m = src.toLowerCase().match(/\.([a-z0-9]+)(?:[?#].*)?$/);
+  const ext = m ? m[1] : '';
+  const map = { mp4:'video/mp4', m4v:'video/mp4', mov:'video/quicktime', webm:'video/webm', ogg:'video/ogg', ogv:'video/ogg' };
+  return map[ext] || 'video/mp4';
+}
+function buildOvIcons(item){
+  const key=itemKey(item);
+  const liked=likeSet.has(key);
+  return `<div class="ov-icons">
+    <div class="ov-icon play" data-role="play"><i class="bi bi-play-fill"></i></div>
+    ${buildMylistBadgeInline(item)}
+    <div class="ov-icon like-ov${liked?' active':''}" data-like-key="${key}"><i class="bi bi-hand-thumbs-up${liked?'-fill':''}"></i></div>
+    <div class="ov-icon" data-role="more"><i class="bi bi-chevron-down"></i></div>
+  </div>`;
+}
+function buildMylistBadgeInline(item){
+  const key=itemKey(item);
+  const active=myList.has(key);
+  return `<div class="ov-icon mylist-ov${active?' active':''}" data-key="${key}"><i class="bi bi-${active?'check-lg':'plus-lg'}"></i></div>`;
+}
+function buildOvMeta(item){
+  return `<div class="ov-meta"><span class="match">98% Match</span><span class="cap">${item.cap||''}</span></div>`;
+}
+function wireOvIcons(card, item){
+  const likeBtn=card.querySelector('.like-ov');
+  if(likeBtn){
+    likeBtn.addEventListener('click', e=>{
+      e.stopPropagation();
+      const key=itemKey(item);
+      if(likeSet.has(key)) likeSet.delete(key); else likeSet.add(key);
+      const active=likeSet.has(key);
+      likeBtn.classList.toggle('active', active);
+      likeBtn.querySelector('i').className = active ? 'bi bi-hand-thumbs-up-fill' : 'bi bi-hand-thumbs-up';
     });
-    block.style.display=any?'':'none';
+  }
+  const mylistOv=card.querySelector('.mylist-ov');
+  if(mylistOv){
+    mylistOv.addEventListener('click', e=>{ e.stopPropagation(); toggleMyList(item); });
+  }
+}
+function toggleMyList(item){
+  const key=itemKey(item);
+  if(myList.has(key)){ myList.delete(key); } else { myList.add(key); }
+  document.querySelectorAll(`[data-key="${CSS.escape(key)}"]`).forEach(b=>{
+    b.classList.toggle('active', myList.has(key));
+    const icon=b.querySelector('i');
+    if(icon) icon.className = myList.has(key) ? 'bi bi-check-lg' : 'bi bi-plus-lg';
+  });
+}
+function renderMyList(){
+  const container=document.getElementById('rows-mylist');
+  container.innerHTML='';
+  const seen=new Set();
+  const items=[...photoItemsFlat, ...videoItemsFlat, ...callsItemsFlat, ...inspireItemsFlat, ...uniItemsFlat, ...queenstownItemsFlat, ...familyItemsFlat, ...gradItemsFlat].filter(it=>{
+    const k=itemKey(it);
+    if(!myList.has(k) || seen.has(k)) return false;
+    seen.add(k); return true;
+  });
+  const isVid=it=>/\.(mp4|mov)(\?|#|$)/i.test(it.src);
+  const vids=items.filter(isVid), pics=items.filter(it=>!isVid(it));
+  if(items.length===0){
+    container.innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">Nothing saved yet. Browse Photos, Videos, or Queenstown and tap the + on any card.</p>';
+    return;
+  }
+  const block=document.createElement('div'); block.className='row-block';
+  block.innerHTML=`<div class="row-head"><h3>Saved</h3><span>${items.length} items</span></div><div class="rail-wrap"><div class="rail"></div></div>`;
+  const rail=block.querySelector('.rail');
+  items.forEach(item=>{
+    const isVideo = isVid(item);
+    const card=document.createElement('div'); card.className='rcard'; card.dataset.cap=item.cap; card.dataset.key=itemKey(item);
+    if(isVideo){
+      card.innerHTML=`<video muted loop playsinline preload="metadata"><source src="${item.src}" type="${getVideoType(item.src)}"></video>
+        <div class="mylist-badge active" data-key="${item.src}"><i class="bi bi-check-lg"></i></div>
+        <div class="center-play"><i class="bi bi-play-fill"></i></div>
+        <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+      card.addEventListener('click', e=>{ if(e.target.closest('.mylist-badge,.mylist-ov,.like-ov'))return; openVideoLb(vids, vids.indexOf(item)); });
+    } else {
+      card.innerHTML=`<img src="${item.src}" alt="Photo" loading="lazy">
+        <div class="mylist-badge active" data-key="${item.src}"><i class="bi bi-check-lg"></i></div>
+        <div class="center-play"><i class="bi bi-arrows-angle-expand"></i></div>
+        <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+      card.addEventListener('click', e=>{ if(e.target.closest('.mylist-badge,.mylist-ov,.like-ov'))return; openPhotoLb(pics, pics.indexOf(item)); });
+    }
+    card.querySelector('.mylist-badge').addEventListener('click', e=>{ e.stopPropagation(); toggleMyList(item); renderMyList(); });
+    wireOvIcons(card, item);
+    const ovMylistBtn=card.querySelector('.mylist-ov');
+    if(ovMylistBtn) ovMylistBtn.addEventListener('click', ()=>renderMyList());
+    rail.appendChild(card);
+  });
+  container.appendChild(block);
+  document.querySelectorAll('#view-mylist .rcard').forEach(el=>cardObserver.observe(el));
+}
+
+const heroSoundBtn=document.getElementById('heroSoundBtn'), heroSoundIcon=document.getElementById('heroSoundIcon');
+if(heroSoundBtn){
+  heroSoundBtn.addEventListener('click', ()=>{ document.getElementById('playBtn').click(); });
+  const bgAudioEl=document.getElementById('bgAudio');
+  if(bgAudioEl){
+    bgAudioEl.addEventListener('play', ()=>{ heroSoundIcon.className='bi bi-volume-up-fill'; });
+    bgAudioEl.addEventListener('pause', ()=>{ heroSoundIcon.className='bi bi-volume-mute-fill'; });
+  }
+}
+const heroListBtn=document.getElementById('heroListBtn');
+let heroSaved=false;
+heroListBtn.addEventListener('click', ()=>{ heroSaved=!heroSaved; heroListBtn.querySelector('i').className = heroSaved ? 'bi bi-check-lg' : 'bi bi-plus-lg'; });
+const heroLikeBtn=document.getElementById('heroLikeBtn');
+let heroLiked=false;
+heroLikeBtn.addEventListener('click', ()=>{ heroLiked=!heroLiked; heroLikeBtn.style.color = heroLiked ? 'var(--red)' : '#fff'; heroLikeBtn.style.borderColor = heroLiked ? 'var(--red)' : 'var(--grey-2)'; });
+
+/* ── DATA ── */
+const PHOTO_GROUPS = [
+  { label:"August 2025 · MSB Study & Memories", items:[
+    {src:"91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG", cap:"Aug 2025"},
+    {src:"IMG_1745.jpg", cap:"Aug 2025"},
+    {src:"IMG_2908.jpg", cap:"Aug 2025"},
+    {src:"IMG_6760.jpg", cap:"Aug 2025"},
+  ]},
+  { label:"September 2025 · Study", items:[
+    {src:"IMG_2696.jpg", cap:"Sep 2025"},
+  ]},
+  { label:"November 2025 · Memories", items:[
+    {src:"IMG_3435.jpg", cap:"Nov 2025"},
+    {src:"IMG_EC927D1CC3E2-1.jpeg", cap:"Nov 2025"},
+  ]},
+  { label:"March 2026 · Study", items:[
+    {src:"2DD8C305-73CF-4233-8423-1D6B0A0390C8_007.jpg", cap:"Mar 2026"},
+    {src:"4365FC69-2A9F-4C7E-B466-EF6DFB3320C8_030.jpg", cap:"Mar 2026"},
+    {src:"4365FC69-2A9F-4C7E-B466-EF6DFB3320C8_035.jpg", cap:"Mar 2026"},
+    {src:"4365FC69-2A9F-4C7E-B466-EF6DFB3320C8_040.jpg", cap:"Mar 2026"},
+    {src:"6BC82F2E-3B32-4556-8621-42A8E5661529_025.jpg", cap:"Mar 2026"},
+    {src:"6BC82F2E-3B32-4556-8621-42A8E5661529_056.jpg", cap:"Mar 2026"},
+    {src:"IMG_6755.jpg", cap:"Mar 2026"},
+    {src:"att.TJA1VyAO3xTnNwer--UsoMwWT8hJtxi1N36ZhISmbno.jpg", cap:"Mar 2026"},
+    {src:"ac788850-4f85-4673-ba06-0d6beb0f7d99.jpeg", cap:"Mar 2026"},
+    {src:"658177068_26120155027627619_3090402980393998288_n.jpg", cap:"Mar 2026"},
+    {src:"IMG_6640.JPG", cap:"Mar 2026"}
+  ]},
+  {label:"Solo Photos",items:[
+    {src:"IMG_2049.jpg", cap:"Mar 2026"},
+    {src:"IMG_7062.jpg", cap:"Mar 2026"},
+    {src:"IMG_4941.jpg", cap:"Mar 2026"},
+  ]},
+  { label:"June 2026 · Study", items:[
+    {src:"IMG_8309.JPG", cap:"Jun 2026"},
+  ]},
+  { label:"Graduation · The Big Day", items:[
+    {src:"IMG_0802.jpg", cap:"Graduation"},
+    {src:"IMG_0816.jpg", cap:"Graduation"},
+    {src:"IMG_0803.jpg", cap:"Graduation"},
+    {src:"IMG_0811.jpg", cap:"Graduation"},
+    {src:"IMG_0811.jpg", cap:"Graduation"},
+    {src:"IMG_0814.jpg", cap:"Graduation"},
+    {src:"IMG_0821.jpg", cap:"Graduation"},
+    {src:"IMG_0824.jpg", cap:"Graduation"},
+    {src:"IMG_0835.jpg", cap:"Graduation"},
+    {src:"IMG_0847.jpg", cap:"Graduation"},
+    {src:"IMG_0849.jpg", cap:"Graduation"},
+    {src:"IMG_0850.jpg", cap:"Graduation"}
+  ]}
+];
+
+const VIDEO_GROUPS = [
+  { label:"August 2025 · Study", items:[
+    {src:"IMG_2697.MOV", cap:"Aug 2025"},
+    {src:"AB35B6B3-A8D3-4F8F-9130-7C5B7AD86964.MOV", cap:"Aug 2025"},
+    {src:"64A8E8A0-24E3-4297-8673-79F71551F2B5.MP4", cap:"Aug 2025"}
+  ]},
+  { label:"Video Call 2025 · Fun Moments", items:[
+    {src:"995799a3ec64401189fbc5bd862344c0.MOV", cap:"Sep 2025"},
+    {src:"ScreenRecording_04-01-2026 21-50-34_1.MP4", cap:"Sep 2025"}
+  ]},
+  { label:" March - July 2026 · ", items:[
+    {src:"2DD8C305-73CF-4233-8423-1D6B0A0390C8.MP4", cap:"Mar 2026"},
+    {src:"02EE3906-1246-4634-84D4-5C21718AE272.MP4", cap:"Mar 2026"},
+    {src:"6BC82F2E-3B32-4556-8621-42A8E5661529.MP4", cap:"Mar 2026"},
+    {src:"4365FC69-2A9F-4C7E-B466-EF6DFB3320C8.MP4", cap:"Mar 2026"},
+    {src:"8353BA76-F4C2-4AAB-8F22-AF7F3023CC7A.MP4", cap:"Mar 2026"}
+  ]},
+  { label:"Gym 2026 ·", items:[
+    {src:"1786175174129_instaPV.mp4", cap:"Mar 2026"}
+  ]},
+  { label: "Inspire With Saddam", items: [
+    {src:"assets/inspirewith%20Saddam/IMG_0142.mov", cap:"Sep 2026"},
+    {src:"assets/inspirewith%20Saddam/IMG_0147.mov", cap:"Sep 2026"},
+    {src:"assets/inspirewith%20Saddam/IMG_0148.mov", cap:"Sep 2026"},
+    {src:"assets/inspirewith%20Saddam/IMG_0151.mov", cap:"Sep 2026"},
+  ]},
+  { label:"Graduation · The Big Day", items:[
+    {src:"assets/grad/gradv1.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv2.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv3.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv4.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv5.mp4", cap:"Graduation"}
+  ]}
+];
+
+const QUEENSTOWN_GROUPS = [
+  { label:"June 2026 · Queenstown", items:[
+    {src:"q1.jpeg", cap:"Jun 2026"},
+    {src:"q2.jpg", cap:"Jun 2026"},
+    {src:"q4.jpeg", cap:"Jun 2026"},
+    {src:"q3.jpeg", cap:"Jun 2026"},
+    {src:"WhatsApp Image 2026-07-03 at 17.52.02.jpeg", cap:"Jun 2026"}
+  ]}
+];
+
+const FAMILY_GROUPS = [
+  { label:"Family · Cheering Him On", items:[
+    {src:"WhatsApp Image 2026-09-07 at 12.10.17.jpeg", cap:"Cheering Him On"},
+    {src:"WhatsApp Image 2026-09-15 at 14.15.50.jpeg", cap:"Cheering Him On"},
+    {src:"WhatsApp Image 2026-09-15 at 14.15.51.jpeg", cap:"Cheering Him On"},
+    {src:"1bf81dc1-41e3-4f4f-9ae0-04b7ce15465a.jpeg", cap:"Cheering Him On"},
+    {src:"d98184a4-3dc7-4369-82c9-67f202beba0d.jpeg", cap:"Cheering Him On"},
+    {src:"FB_IMG_1730692392265.jpg", cap:"Jun 2026"},
+    {src:"FB_IMG_1730693765061.jpg", cap:"Jun 2026"},
+    {src:"IMG20231122215901.jpg", cap:"Jun 2026"},
+    {src:"IMG20231122220109.jpg", cap:"Jun 2026"},
+    {src:"IMG20231122230907.jpg", cap:"Jun 2026"},
+    {src:"IMG20231124171842.jpg", cap:"Jun 2026"},
+    {src:"WhatsApp Image 2026-09-15 at 14.15.53.jpeg", cap:"Jun 2026"}
+  ]}
+];
+
+const CALLS_GROUPS = [
+  { label: "Video Calls", items: [
+    {src:"IMG_7276%202.PNG", cap:"Sep 2026"},
+    {src:"photo-output_1.jpeg", cap:"Sep 2026"},
+    {src:"IMG_7917.jpg", cap:"Sep 2026"},
+    {src:"WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg", cap:"Sep 2026"},
+    {src:"IMG_0108.PNG", cap:"Sep 2026"},
+  ]},
+  { label: "Video Calls · Recordings", items: [
+    {src:"WhatsApp%20Video%202026-09-25%20at%2019.49.56.mp4", cap:"Mar 2026"},
+    {src:"ScreenRecording_04-01-2026 21-50-34_1.MP4", cap:"Mar 2026"},
+  ]}
+];
+
+const INSPIRE_GROUPS = [
+  { label: "Inspire With Saddam", items: [
+    {src:"assets/inspirewith%20Saddam/IMG_0142.mov", cap:"Sep 2026"},
+    {src:"assets/inspirewith%20Saddam/IMG_0147.mov", cap:"Sep 2026"},
+    {src:"assets/inspirewith%20Saddam/IMG_0148.mov", cap:"Sep 2026"},
+    {src:"assets/inspirewith%20Saddam/IMG_0151.mov", cap:"Sep 2026"},
+  ]}
+];
+const UNI_GROUPS = [
+  { label: "Uni Presentations", items: [
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 2_51_47 PM (1).mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 2_51_47 PM (2).mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 2_51_47 PM.mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_00_55 PM (1).mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_00_55 PM (2).mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_00_55 PM.mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_52_09 PM (1).mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_52_09 PM (2).mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_52_09 PM.mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 31, 2026, 11_36 AM.mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 31, 2026, 11_53 AM.mp4", cap:"Mar 2026"},
+    {src:"assets/UniPresentation/Recording Mar 31, 2026, 12_16 PM.mp4", cap:"Mar 2026"},
+  ]}
+];
+
+/* GRADUATION: 11 photos + 15 videos. Put files in assets/grad/ and rename below to match. */
+const GRAD_GROUPS = [
+  { label:"Graduation · Photos", items:[
+    {src:"IMG_0802.jpg", cap:"Graduation"},
+    {src:"IMG_0816.jpg", cap:"Graduation"},
+    {src:"IMG_0803.jpg", cap:"Graduation"},
+    {src:"IMG_0811.jpg", cap:"Graduation"},
+    {src:"IMG_0811.jpg", cap:"Graduation"},
+    {src:"IMG_0814.jpg", cap:"Graduation"},
+    {src:"IMG_0821.jpg", cap:"Graduation"},
+    {src:"IMG_0824.jpg", cap:"Graduation"},
+    {src:"IMG_0835.jpg", cap:"Graduation"},
+    {src:"IMG_0847.jpg", cap:"Graduation"},
+    {src:"IMG_0849.jpg", cap:"Graduation"},
+    {src:"IMG_0850.jpg", cap:"Graduation"}
+  ]},
+  { label:"Graduation · Videos", items:[
+    {src:"assets/grad/gradv1.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv2.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv3.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv4.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv5.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv6.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv7.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv8.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv9.mp4",  cap:"Graduation"},
+    {src:"assets/grad/gradv10.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv11.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv12.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv13.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv14.mp4", cap:"Graduation"},
+    {src:"assets/grad/gradv15.mp4", cap:"Graduation"}
+  ]}
+];
+
+function buildTop10(){
+  const container=document.getElementById('rows-top10');
+  const picks=[
+    PHOTO_GROUPS[3].items[9], QUEENSTOWN_GROUPS[0].items[3], VIDEO_GROUPS[2].items[0],
+    PHOTO_GROUPS[0].items[0], VIDEO_GROUPS[0].items[0], PHOTO_GROUPS[4].items[0],
+    VIDEO_GROUPS[2].items[3], QUEENSTOWN_GROUPS[0].items[0], VIDEO_GROUPS[1].items[0], PHOTO_GROUPS[3].items[3]
+  ];
+  const block=document.createElement('div'); block.className='row-block top10-row';
+  block.innerHTML=`<div class="row-head"><h3>Top 10 Memories</h3><span>Most replayed</span></div><div class="rail-wrap"><div class="rail" id="top10rail"></div></div>`;
+  const rail=block.querySelector('.rail');
+  picks.forEach((item,idx)=>{
+    const isVideo = item.src.match(/\.(mp4|mov)(\?|#|$)/i);
+    const wrap=document.createElement('div'); wrap.className='top10-card';
+    const num=document.createElement('div'); num.className='top10-num'; num.textContent=idx+1;
+    const card=document.createElement('div'); card.className='rcard'; card.dataset.cap=item.cap; card.style.width='150px';
+    if(isVideo){
+      card.innerHTML=`<video muted loop playsinline preload="metadata"><source src="${item.src}" type="${getVideoType(item.src)}"></video>
+        <div class="center-play"><i class="bi bi-play-fill"></i></div>
+        <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+      card.addEventListener('mouseenter',()=>{ const v=card.querySelector('video'); v.currentTime=0; v.play().catch(()=>{}); });
+      card.addEventListener('mouseleave',()=>{ card.querySelector('video').pause(); });
+      card.addEventListener('click', e=>{ if(e.target.closest('.mylist-ov,.like-ov'))return; openVideoLb([item],0); });
+    } else {
+      card.innerHTML=`<img src="${item.src}" alt="Photo" loading="lazy">
+        <div class="center-play"><i class="bi bi-arrows-angle-expand"></i></div>
+        <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+      card.addEventListener('click', e=>{ if(e.target.closest('.mylist-ov,.like-ov'))return; openPhotoLb([item],0); });
+    }
+    wireOvIcons(card, item);
+    wrap.appendChild(num); wrap.appendChild(card);
+    rail.appendChild(wrap);
+  });
+  container.appendChild(block);
+  attachRailArrows(block);
+  document.querySelectorAll('#rows-top10 .rcard').forEach(el=>cardObserver.observe(el));
+}
+
+function attachRailArrows(block){
+  const wrap=block.querySelector('.rail-wrap');
+  const rail=block.querySelector('.rail');
+  const left=document.createElement('button'); left.className='rail-arrow left'; left.innerHTML='<i class="bi bi-chevron-left"></i>';
+  const right=document.createElement('button'); right.className='rail-arrow right'; right.innerHTML='<i class="bi bi-chevron-right"></i>';
+  left.addEventListener('click', ()=>rail.scrollBy({left:-rail.clientWidth*0.85, behavior:'smooth'}));
+  right.addEventListener('click', ()=>rail.scrollBy({left:rail.clientWidth*0.85, behavior:'smooth'}));
+  wrap.appendChild(left); wrap.appendChild(right);
+}
+
+function buildMylistBadge(item){
+  const key=itemKey(item);
+  const active = myList.has(key);
+  return `<div class="mylist-badge${active?' active':''}" data-key="${key}"><i class="bi bi-${active?'check-lg':'plus-lg'}"></i></div>`;
+}
+
+function buildPhotoRowsGeneric(containerId, groups){
+  const container=document.getElementById(containerId);
+  let allItems=[]; let globalIdx=0;
+  groups.forEach(group=>{
+    const block=document.createElement('div'); block.className='row-block';
+    const railClass = 'rail' + (group.landscape ? ' landscape-rail' : '');
+    block.innerHTML=`<div class="row-head"><h3>${group.label}</h3><span>${group.items.length} photos</span></div><div class="rail-wrap"><div class="${railClass}"></div></div>`;
+    const rail=block.querySelector('.rail');
+    group.items.forEach(item=>{
+      const idx=globalIdx++; allItems.push(item);
+      const card=document.createElement('div'); card.className='rcard'; card.dataset.cap=item.cap;
+      card.innerHTML=`<img src="${item.src}" alt="Photo" loading="lazy">
+        ${buildMylistBadge(item)}
+        <div class="center-play"><i class="bi bi-arrows-angle-expand"></i></div>
+        <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+      card.addEventListener('click', e=>{ if(e.target.closest('.mylist-badge,.mylist-ov,.like-ov')) return; openPhotoLb(allItems, idx); });
+      card.querySelector('.mylist-badge').addEventListener('click', e=>{ e.stopPropagation(); toggleMyList(item); });
+      wireOvIcons(card, item);
+      rail.appendChild(card);
+    });
+    container.appendChild(block);
+    attachRailArrows(block);
+  });
+  return allItems;
+}
+
+function buildVideoRowsGeneric(containerId, groups){
+  const container=document.getElementById(containerId);
+  let allItems=[]; let globalIdx=0;
+  groups.forEach(group=>{
+    const block=document.createElement('div'); block.className='row-block';
+    const railClass = 'rail' + (group.landscape ? ' landscape-rail' : '');
+    block.innerHTML=`<div class="row-head"><h3>${group.label}</h3><span>${group.items.length} clips</span></div><div class="rail-wrap"><div class="${railClass}"></div></div>`;
+    const rail=block.querySelector('.rail');
+    group.items.forEach(item=>{
+      const idx=globalIdx++; allItems.push(item);
+      const card=document.createElement('div'); card.className='rcard'; card.dataset.cap=item.cap;
+      card.innerHTML=`<video muted loop playsinline preload="metadata"><source src="${item.src}" type="${getVideoType(item.src)}"></video>
+        ${buildMylistBadge(item)}
+        <div class="center-play"><i class="bi bi-play-fill"></i></div>
+        <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+      const v=card.querySelector('video');
+      const drawThumb=()=>{ v.currentTime=0.1; const p=v.play(); if(p&&p.then){ p.then(()=>v.pause()).catch(()=>{}); } else { v.pause(); } };
+      if(v.readyState>=1) drawThumb(); else v.addEventListener('loadedmetadata', drawThumb, {once:true});
+      card.addEventListener('mouseenter',()=>{ v.currentTime=0; v.play().catch(()=>{}); });
+      card.addEventListener('mouseleave',()=>{ v.pause(); });
+      card.addEventListener('click', e=>{ if(e.target.closest('.mylist-badge,.mylist-ov,.like-ov')) return; openVideoLb(allItems, idx); });
+      card.querySelector('.mylist-badge').addEventListener('click', e=>{ e.stopPropagation(); toggleMyList(item); });
+      wireOvIcons(card, item);
+      rail.appendChild(card);
+    });
+    container.appendChild(block);
+    attachRailArrows(block);
+  });
+  return allItems;
+}
+function buildVideoRows(){ return buildVideoRowsGeneric('rows-videos', VIDEO_GROUPS); }
+
+/* Mixed rows: a group is treated as a video group when its first item's src
+   ends in .mp4/.mov, otherwise as a photo group. Used by Calls and Graduation. */
+function buildCallsRowsGeneric(containerId, groups){
+  const container=document.getElementById(containerId);
+  let allPhotos=[], allVideos=[];
+  groups.forEach(group=>{
+    const isVideoGroup = group.items.length>0 && /\.(mp4|mov)(\?|#|$)/i.test(group.items[0].src);
+    const block=document.createElement('div'); block.className='row-block';
+    const railClass = 'rail' + (group.landscape ? ' landscape-rail' : '');
+    block.innerHTML=`<div class="row-head"><h3>${group.label}</h3><span>${group.items.length} item${group.items.length===1?'':'s'}</span></div><div class="rail-wrap"><div class="${railClass}"></div></div>`;
+    const rail=block.querySelector('.rail');
+    group.items.forEach(item=>{
+      const card=document.createElement('div'); card.className='rcard'; card.dataset.cap=item.cap;
+      if(isVideoGroup){
+        allVideos.push(item);
+        const vIdx=allVideos.length-1;
+        card.innerHTML=`<video muted loop playsinline preload="metadata"><source src="${item.src}" type="${getVideoType(item.src)}"></video>
+          ${buildMylistBadge(item)}
+          <div class="center-play"><i class="bi bi-play-fill"></i></div>
+          <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+        const v=card.querySelector('video');
+        const drawThumb=()=>{ v.currentTime=0.1; const p=v.play(); if(p&&p.then){ p.then(()=>v.pause()).catch(()=>{}); } else { v.pause(); } };
+        if(v.readyState>=1) drawThumb(); else v.addEventListener('loadedmetadata', drawThumb, {once:true});
+        card.addEventListener('mouseenter',()=>{ v.currentTime=0; v.play().catch(()=>{}); });
+        card.addEventListener('mouseleave',()=>{ v.pause(); });
+        card.addEventListener('click', e=>{ if(e.target.closest('.mylist-badge,.mylist-ov,.like-ov')) return; openVideoLb(allVideos, vIdx); });
+      } else {
+        allPhotos.push(item);
+        const pIdx=allPhotos.length-1;
+        card.innerHTML=`<img src="${item.src}" alt="Photo" loading="lazy">
+          ${buildMylistBadge(item)}
+          <div class="center-play"><i class="bi bi-arrows-angle-expand"></i></div>
+          <div class="info-ov">${buildOvIcons(item)}${buildOvMeta(item)}</div>`;
+        card.addEventListener('click', e=>{ if(e.target.closest('.mylist-badge,.mylist-ov,.like-ov')) return; openPhotoLb(allPhotos, pIdx); });
+      }
+      card.querySelector('.mylist-badge').addEventListener('click', e=>{ e.stopPropagation(); toggleMyList(item); });
+      wireOvIcons(card, item);
+      rail.appendChild(card);
+    });
+    container.appendChild(block);
+    attachRailArrows(block);
+  });
+  return [...allPhotos, ...allVideos];
+}
+
+function buildFilters(containerId, groups, targetContainerId){
+  const el=document.getElementById(containerId);
+  if(!el) return;
+  el.innerHTML='';
+  const all=document.createElement('button'); all.className='chip active'; all.textContent='All';
+  all.addEventListener('click', ()=>{
+    el.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); all.classList.add('active');
+    document.querySelectorAll(`#${targetContainerId} .row-block`).forEach(b=>b.style.display='');
+  });
+  el.appendChild(all);
+  groups.forEach((g,i)=>{
+    const chip=document.createElement('button'); chip.className='chip'; chip.textContent=g.label.split('·')[0].trim();
+    chip.addEventListener('click', ()=>{
+      el.querySelectorAll('.chip').forEach(c=>c.classList.remove('active')); chip.classList.add('active');
+      document.querySelectorAll(`#${targetContainerId} .row-block`).forEach((b,bi)=>{ b.style.display = (bi===i)?'':'none'; });
+    });
+    el.appendChild(chip);
   });
 }
 
-/* ───────── HERO BUTTONS ───────── */
-let heroSaved=false,heroLiked=false;
-$('heroListBtn').addEventListener('click',function(){heroSaved=!heroSaved;this.querySelector('i').className=heroSaved?'bi bi-check-lg':'bi bi-plus-lg';});
-$('heroLikeBtn').addEventListener('click',function(){heroLiked=!heroLiked;this.style.color=heroLiked?'var(--red)':'#fff';this.style.borderColor=heroLiked?'var(--red)':'var(--grey-2)';});
+let photoItemsFlat=[], videoItemsFlat=[], callsItemsFlat=[], inspireItemsFlat=[], uniItemsFlat=[], queenstownItemsFlat=[], familyItemsFlat=[], gradItemsFlat=[];
 
-/* ───────── LIGHTBOXES ───────── */
-function makeLightbox({box,closeBtn,prevBtn,nextBtn,counter,mylistBtn,show,onClose}){
-  const S={items:[],cur:0};
-  const refresh=()=>{
-    const it=S.items[S.cur]; if(!it)return;
-    show(it);
-    counter.textContent=(S.cur+1)+' / '+S.items.length;
-    const on=myList.has(itemKey(it));
-    mylistBtn.classList.toggle('active',on);
-    mylistBtn.querySelector('span').textContent=on?'In My List':'My List';
-    mylistBtn.querySelector('i').className=on?'bi bi-check-lg':'bi bi-plus-lg';
-  };
-  const close=()=>{if(onClose)onClose();box.classList.remove('active');};
-  const nav=d=>{S.cur=(S.cur+d+S.items.length)%S.items.length;refresh();};
-  closeBtn.addEventListener('click',close);
-  box.addEventListener('click',e=>{if(e.target===box)close();});
-  prevBtn.addEventListener('click',e=>{e.stopPropagation();nav(-1);});
-  nextBtn.addEventListener('click',e=>{e.stopPropagation();nav(1);});
-  mylistBtn.addEventListener('click',()=>{toggleMyList(S.items[S.cur]);refresh();});
-  let tx=0;
-  box.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
-  box.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>50)nav(dx<0?1:-1);},{passive:true});
-  return {open(items,idx){S.items=items;S.cur=idx;refresh();box.classList.add('active');},close,nav,isOpen:()=>box.classList.contains('active')};
-}
-const vlbVideo=$('vlbVideo');
-const photoLb=makeLightbox({box:$('lightbox'),closeBtn:$('lbClose'),prevBtn:$('lbPrev'),nextBtn:$('lbNext'),counter:$('lbCounter'),mylistBtn:$('lbMylist'),show:it=>{$('lbImg').src=it.src;}});
-const videoLb=makeLightbox({box:$('vlightbox'),closeBtn:$('vlbClose'),prevBtn:$('vlbPrev'),nextBtn:$('vlbNext'),counter:$('vlbCounter'),mylistBtn:$('vlbMylist'),
-  show:it=>{vlbVideo.src=it.src;vlbVideo.load();vlbVideo.play().catch(()=>{});},
-  onClose:()=>{vlbVideo.pause();vlbVideo.removeAttribute('src');vlbVideo.load();}});
-const openPhotoLb=(items,i)=>photoLb.open(items,i);
-const openVideoLb=(items,i)=>videoLb.open(items,i);
-document.addEventListener('keydown',e=>{
-  const lb=photoLb.isOpen()?photoLb:videoLb.isOpen()?videoLb:null; if(!lb)return;
-  if(e.key==='Escape')lb.close();
-  if(e.key==='ArrowLeft')lb.nav(-1);
-  if(e.key==='ArrowRight')lb.nav(1);
-});
-
-/* ───────── BACKGROUND AUDIO ───────── */
-(function(){
-  const audio=$('bgAudio'),btn=$('playBtn'),icon=$('playIcon'),player=$('player'),label=player.querySelector('.player-label'),soundIcon=$('heroSoundIcon');
-  const KEY='bgAudioStateSA';
-  const store=(()=>{try{localStorage.setItem('__t','1');localStorage.removeItem('__t');return localStorage;}catch(e){return null;}})();
-  const read=()=>{try{return JSON.parse(store.getItem(KEY));}catch(e){return null;}};
-  const write=s=>{try{store.setItem(KEY,JSON.stringify(s));}catch(e){}};
-  const setUI=p=>{icon.className=p?'bi bi-pause-fill':'bi bi-play-fill';player.classList.toggle('playing',p);soundIcon.className=p?'bi bi-volume-up-fill':'bi bi-volume-mute-fill';};
-  const warn=t=>{label.textContent=t;label.style.color='#e07b7b';};
-  audio.addEventListener('play',()=>setUI(true));
-  audio.addEventListener('pause',()=>setUI(false));
-  audio.addEventListener('error',()=>warn('Audio file not found'));
-  const toggle=()=>{
-    if(audio.paused) audio.play().catch(()=>warn('Tap again to allow audio'));
-    else audio.pause();
-  };
-  btn.addEventListener('click',toggle);
-  $('heroSoundBtn').addEventListener('click',toggle);
-  if(store){
-    const s=read();
-    if(s&&typeof s.time==='number'){
-      audio.addEventListener('loadedmetadata',()=>{audio.currentTime=s.time;},{once:true});
-      audio.load();
-      if(s.playing){
-        const resume=()=>{audio.play().catch(()=>{});};
-        audio.play().catch(()=>{
-          ['click','keydown','touchstart'].forEach(ev=>document.addEventListener(ev,resume,{once:true}));
-        });
-      }
-    }
-    setInterval(()=>write({time:audio.currentTime||0,playing:!audio.paused}),1000);
-    addEventListener('beforeunload',()=>write({time:audio.currentTime||0,playing:!audio.paused}));
+function initView(name){
+  if(name==='home'){ buildTop10(); }
+  if(name==='photos'){
+    photoItemsFlat = buildPhotoRowsGeneric('rows-photos', PHOTO_GROUPS);
+    buildFilters('photoFilters', PHOTO_GROUPS, 'rows-photos');
+    document.querySelectorAll('#view-photos .rcard').forEach(el=>cardObserver.observe(el));
   }
-})();
+  if(name==='videos'){
+    videoItemsFlat = buildVideoRows();
+    buildFilters('videoFilters', VIDEO_GROUPS, 'rows-videos');
+    document.querySelectorAll('#view-videos .rcard').forEach(el=>cardObserver.observe(el));
+  }
+  if(name==='calls'){
+    const hasCalls = CALLS_GROUPS.some(g=>g.items.length>0);
+    if(hasCalls){
+      callsItemsFlat = buildCallsRowsGeneric('rows-calls', CALLS_GROUPS);
+      buildFilters('callsFilters', CALLS_GROUPS, 'rows-calls');
+    } else {
+      document.getElementById('rows-calls').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No video calls added yet — drop the clips into <code>assets/videocall/</code> and list them in the CALLS_GROUPS array near the top of the script.</p>';
+    }
+    document.querySelectorAll('#view-calls .rcard').forEach(el=>cardObserver.observe(el));
+  }
+  if(name==='inspire'){
+    const hasInspire = INSPIRE_GROUPS.some(g=>g.items.length>0);
+    if(hasInspire){
+      inspireItemsFlat = buildVideoRowsGeneric('rows-inspire', INSPIRE_GROUPS);
+      buildFilters('inspireFilters', INSPIRE_GROUPS, 'rows-inspire');
+    } else {
+      document.getElementById('rows-inspire').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No videos added yet — drop clips into <code>assets/inspire/</code> and list them in the INSPIRE_GROUPS array near the top of the script.</p>';
+    }
+    document.querySelectorAll('#view-inspire .rcard').forEach(el=>cardObserver.observe(el));
+  }
+  if(name==='uni'){
+    const hasUni = UNI_GROUPS.some(g=>g.items.length>0);
+    if(hasUni){
+      uniItemsFlat = buildVideoRowsGeneric('rows-uni', UNI_GROUPS);
+      buildFilters('uniFilters', UNI_GROUPS, 'rows-uni');
+    } else {
+      document.getElementById('rows-uni').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No uni presentation clips added yet — drop them into <code>assets/uni/</code> and list them in the UNI_GROUPS array near the top of the script.</p>';
+    }
+    document.querySelectorAll('#view-uni .rcard').forEach(el=>cardObserver.observe(el));
+  }
+  if(name==='queenstown'){
+    queenstownItemsFlat = buildPhotoRowsGeneric('rows-queenstown', QUEENSTOWN_GROUPS);
+    document.querySelectorAll('#view-queenstown .rcard').forEach(el=>cardObserver.observe(el));
+  }
+  if(name==='family'){
+    const hasPhotos = FAMILY_GROUPS.some(g=>g.items.length>0);
+    if(hasPhotos){
+      familyItemsFlat = buildPhotoRowsGeneric('rows-family', FAMILY_GROUPS);
+      buildFilters('familyFilters', FAMILY_GROUPS, 'rows-family');
+    } else {
+      document.getElementById('rows-family').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No family photos added yet — drop them into <code>assets/family/</code> and list them in the FAMILY_GROUPS array near the top of the script.</p>';
+    }
+    document.querySelectorAll('#view-family .rcard').forEach(el=>cardObserver.observe(el));
+  }
+  if(name==='grad'){
+    gradItemsFlat = buildCallsRowsGeneric('rows-grad', GRAD_GROUPS);
+    buildFilters('gradFilters', GRAD_GROUPS, 'rows-grad');
+    document.querySelectorAll('#view-grad .rcard').forEach(el=>cardObserver.observe(el));
+  }
+}
+initView('home'); inited.home=true;
 
-/* ───────── START ───────── */
-buildTop10(); inited.home=true;
+/* ── PHOTO LIGHTBOX ── */
+const lb=document.getElementById('lightbox'), lbImg=document.getElementById('lbImg'), lbCounter=document.getElementById('lbCounter'), lbMylist=document.getElementById('lbMylist');
+let lbItems=[], lbCurrent=0;
+function updateLbMylist(){
+  const item=lbItems[lbCurrent]; if(!item) return;
+  const active=myList.has(itemKey(item));
+  lbMylist.classList.toggle('active', active);
+  lbMylist.querySelector('span').textContent = active ? 'In My List' : 'My List';
+  lbMylist.querySelector('i').className = active ? 'bi bi-check-lg' : 'bi bi-plus-lg';
+}
+function openPhotoLb(items, idx){
+  lbItems=items; lbCurrent=idx;
+  lbImg.src=lbItems[lbCurrent].src;
+  lbCounter.textContent=(lbCurrent+1)+' / '+lbItems.length;
+  updateLbMylist();
+  lb.classList.add('active');
+}
+function closePhotoLb(){ lb.classList.remove('active'); }
+function navPhotoLb(dir){
+  lbCurrent=(lbCurrent+dir+lbItems.length)%lbItems.length;
+  lbImg.src=lbItems[lbCurrent].src;
+  lbCounter.textContent=(lbCurrent+1)+' / '+lbItems.length;
+  updateLbMylist();
+}
+document.getElementById('lbClose').addEventListener('click', closePhotoLb);
+lb.addEventListener('click', e=>{ if(e.target===lb) closePhotoLb(); });
+document.getElementById('lbPrev').addEventListener('click', e=>{ e.stopPropagation(); navPhotoLb(-1); });
+document.getElementById('lbNext').addEventListener('click', e=>{ e.stopPropagation(); navPhotoLb(1); });
+lbMylist.addEventListener('click', ()=>{ toggleMyList(lbItems[lbCurrent]); updateLbMylist(); });
+let ptx=0;
+lb.addEventListener('touchstart', e=>{ ptx=e.touches[0].clientX; }, {passive:true});
+lb.addEventListener('touchend', e=>{ const dx=e.changedTouches[0].clientX-ptx; if(Math.abs(dx)>50) navPhotoLb(dx<0?1:-1); }, {passive:true});
+
+/* ── VIDEO LIGHTBOX ── */
+const vlb=document.getElementById('vlightbox'), vlbVideo=document.getElementById('vlbVideo'), vlbCounter=document.getElementById('vlbCounter'), vlbMylist=document.getElementById('vlbMylist');
+let vlbItems=[], vlbCurrent=0;
+function updateVlbMylist(){
+  const item=vlbItems[vlbCurrent]; if(!item) return;
+  const active=myList.has(itemKey(item));
+  vlbMylist.classList.toggle('active', active);
+  vlbMylist.querySelector('span').textContent = active ? 'In My List' : 'My List';
+  vlbMylist.querySelector('i').className = active ? 'bi bi-check-lg' : 'bi bi-plus-lg';
+}
+function openVideoLb(items, idx){
+  vlbItems=items; vlbCurrent=idx;
+  vlbVideo.innerHTML=`<source src="${vlbItems[vlbCurrent].src}" type="${getVideoType(vlbItems[vlbCurrent].src)}">`;
+  vlbVideo.load(); vlbVideo.play().catch(()=>{});
+  vlbCounter.textContent=(vlbCurrent+1)+' / '+vlbItems.length;
+  updateVlbMylist();
+  vlb.classList.add('active');
+}
+function closeVideoLb(){ vlbVideo.pause(); vlb.classList.remove('active'); }
+function navVideoLb(dir){
+  vlbCurrent=(vlbCurrent+dir+vlbItems.length)%vlbItems.length;
+  vlbVideo.innerHTML=`<source src="${vlbItems[vlbCurrent].src}" type="${getVideoType(vlbItems[vlbCurrent].src)}">`;
+  vlbVideo.load(); vlbVideo.play().catch(()=>{});
+  vlbCounter.textContent=(vlbCurrent+1)+' / '+vlbItems.length;
+  updateVlbMylist();
+}
+document.getElementById('vlbClose').addEventListener('click', closeVideoLb);
+vlb.addEventListener('click', e=>{ if(e.target===vlb) closeVideoLb(); });
+document.getElementById('vlbPrev').addEventListener('click', e=>{ e.stopPropagation(); navVideoLb(-1); });
+document.getElementById('vlbNext').addEventListener('click', e=>{ e.stopPropagation(); navVideoLb(1); });
+vlbMylist.addEventListener('click', ()=>{ toggleMyList(vlbItems[vlbCurrent]); updateVlbMylist(); });
+let vtx=0;
+vlb.addEventListener('touchstart', e=>{ vtx=e.touches[0].clientX; }, {passive:true});
+vlb.addEventListener('touchend', e=>{ const dx=e.changedTouches[0].clientX-vtx; if(Math.abs(dx)>50) navVideoLb(dx<0?1:-1); }, {passive:true});
+
+document.addEventListener('keydown', e=>{
+  if(lb.classList.contains('active')){
+    if(e.key==='Escape') closePhotoLb();
+    if(e.key==='ArrowLeft') navPhotoLb(-1);
+    if(e.key==='ArrowRight') navPhotoLb(1);
+  }
+  if(vlb.classList.contains('active')){
+    if(e.key==='Escape') closeVideoLb();
+    if(e.key==='ArrowLeft') navVideoLb(-1);
+    if(e.key==='ArrowRight') navVideoLb(1);
+  }
+});
+</script>
+<script>
+(function () {
+  const STORAGE_KEY = "bgAudioStateSA";
+  function pickStore() {
+    try { localStorage.setItem("__t__","1"); localStorage.removeItem("__t__"); return localStorage; } catch(e){}
+    try { sessionStorage.setItem("__t__","1"); sessionStorage.removeItem("__t__"); return sessionStorage; } catch(e){}
+    return null;
+  }
+  const store = pickStore();
+  function readState(){ if(!store) return null; try{ const r=store.getItem(STORAGE_KEY); return r?JSON.parse(r):null; }catch(e){ return null; } }
+  function writeState(s){ if(!store) return; try{ store.setItem(STORAGE_KEY, JSON.stringify(s)); }catch(e){} }
+  function init(){
+    const audio=document.getElementById("bgAudio");
+    const playBtn=document.getElementById("playBtn");
+    const playIcon=document.getElementById("playIcon");
+    const playerEl=document.getElementById("player");
+    const label=playerEl?playerEl.querySelector(".player-label"):null;
+    const defaultLabel=label?label.textContent:"";
+    function setUI(p){ if(playIcon) playIcon.className=p?"bi bi-pause-fill":"bi bi-play-fill"; if(playerEl) playerEl.classList.toggle("playing",p); }
+    function errLabel(t){ if(label){ label.textContent=t; label.style.color="#e07b7b"; } }
+    if(audio){ audio.addEventListener("error",()=>{
+      const err=audio.error;
+      const msgs={1:"Audio load aborted",2:"Network error loading audio",3:"Audio file can't be decoded",4:"Audio file not found"};
+      errLabel(err?(msgs[err.code]||"Audio error"):"Audio error");
+    }); }
+    if(playBtn&&audio){ playBtn.addEventListener("click",()=>{
+      if(audio.paused){ audio.play().then(()=>setUI(true)).catch(()=>{ setUI(false); if(label&&label.textContent===defaultLabel) errLabel("Tap again to allow audio"); }); }
+      else { audio.pause(); setUI(false); }
+    }); }
+    if(!audio) return;
+    audio.addEventListener("play",()=>setUI(true));
+    audio.addEventListener("pause",()=>setUI(false));
+    try{
+      const saved=readState(); let resumed=false;
+      if(saved && typeof saved.time==="number"){
+        const seek=()=>{ if(audio.readyState>=1) audio.currentTime=saved.time; else audio.addEventListener("loadedmetadata",()=>{audio.currentTime=saved.time;},{once:true}); };
+        seek();
+        if(saved.playing) audio.play().then(()=>{resumed=true;}).catch(()=>{});
+      }
+      function unlock(){ if(resumed||audio.paused===false){cleanup();return;} const s=readState(); if(s&&s.playing&&audio.paused) audio.play().catch(()=>{}); cleanup(); }
+      function cleanup(){ document.removeEventListener("click",unlock); document.removeEventListener("keydown",unlock); document.removeEventListener("touchstart",unlock); }
+      document.addEventListener("click",unlock); document.addEventListener("keydown",unlock); document.addEventListener("touchstart",unlock);
+      setInterval(()=>{ writeState({time:audio.currentTime||0, playing:!audio.paused}); },1000);
+      window.addEventListener("beforeunload",()=>{ writeState({time:audio.currentTime||0, playing:!audio.paused}); });
+    }catch(e){}
+  }
+  document.addEventListener("DOMContentLoaded", init);
+})();
 </script>
 </body>
 </html>
