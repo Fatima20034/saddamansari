@@ -680,7 +680,7 @@ const heroLikeBtn=document.getElementById('heroLikeBtn');
 let heroLiked=false;
 heroLikeBtn.addEventListener('click', ()=>{ heroLiked=!heroLiked; heroLikeBtn.style.color = heroLiked ? 'var(--red)' : '#fff'; heroLikeBtn.style.borderColor = heroLiked ? 'var(--red)' : 'var(--grey-2)'; });
 
-/* ── DATA (every filename below matches a file in your repo) ── */
+/* ── DATA (every filename below must match a file in your repo) ── */
 const PHOTO_GROUPS = [
   { label:"August 2025 · MSB Study & Memories", items:[
     {src:"91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG", cap:"Aug 2025"},
@@ -803,8 +803,15 @@ const INSPIRE_GROUPS = [
   ]}
 ];
 
-/* Not uploaded yet. Add files to the repo, then list them here. */
-const UNI_GROUPS = [ { label:"Uni Presentations", items:[] } ];
+/* Uni Presentations (videos). Remove landscape:true if the clips are vertical. */
+const UNI_GROUPS = [
+  { label:"Uni Presentations · Mar 26, 2026", landscape:true, items:[
+    {src:"Recording Mar 26, 2026, 2_51_47 PM (2).mp4", cap:"Mar 2026"},
+    {src:"Recording Mar 26, 2026, 3_52_09 PM (1).mp4", cap:"Mar 2026"},
+    {src:"Recording Mar 26, 2026, 3_52_09 PM (2).mp4", cap:"Mar 2026"},
+    {src:"Recording Mar 26, 2026, 3_52_09 PM.mp4", cap:"Mar 2026"}
+  ]}
+];
 
 /* Graduation videos not uploaded yet. Add them, then add a second group like:
    { label:"Graduation · Videos", items:[ {src:"gradv1.mp4", cap:"Graduation"} ] } */
@@ -1027,6 +1034,7 @@ function initView(name){
     if(hasUni){
       uniItemsFlat = buildVideoRowsGeneric('rows-uni', UNI_GROUPS);
       buildFilters('uniFilters', UNI_GROUPS, 'rows-uni');
+      document.querySelectorAll('#view-uni .rcard').forEach(el=>cardObserver.observe(el));
     } else {
       document.getElementById('rows-uni').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">Presentations coming soon.</p>';
     }
