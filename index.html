@@ -296,7 +296,7 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
         </div>
       </div>
       <div class="tile" data-nav="family">
-        <img src="WhatsApp Image 2026-09-15 at 14.15.51.jpeg" alt="Family">
+        <img src="WhatsApp%20Image%202026-09-15%20at%2014.15.51.jpeg" alt="Family">
         <div class="tile-body">
           <div class="tile-kicker">Issue 04 · Home Base</div>
           <div class="tile-title">Family</div>
@@ -312,7 +312,7 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
         </div>
       </div>
       <div class="tile" data-nav="grad">
-        <img src="grad1.jpg" alt="Graduation">
+        <img src="IMG_0802.jpg" alt="Graduation">
         <div class="tile-body">
           <div class="tile-kicker">Issue 09 · The Big Day</div>
           <div class="tile-title">Graduation</div>
@@ -506,7 +506,7 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
 <div class="lightbox" id="vlightbox">
   <button class="lb-close" id="vlbClose"><i class="bi bi-x-lg"></i></button>
   <button class="lb-nav lb-prev" id="vlbPrev"><i class="bi bi-chevron-left"></i></button>
-  <video class="lightbox-video" id="vlbVideo" controls autoplay></video>
+  <video class="lightbox-video" id="vlbVideo" controls autoplay playsinline></video>
   <button class="lb-nav lb-next" id="vlbNext"><i class="bi bi-chevron-right"></i></button>
   <div class="lb-counter" id="vlbCounter"></div>
   <div class="lb-mylist" id="vlbMylist"><i class="bi bi-plus-lg"></i><span>My List</span></div>
@@ -545,6 +545,13 @@ const viewNames=['home','photos','videos','calls','inspire','uni','queenstown','
 const views={}; viewNames.forEach(n=>views[n]=document.getElementById('view-'+n));
 let inited={};
 
+const hamburger=document.getElementById('hamburger'), mobileDrawer=document.getElementById('mobileDrawer');
+hamburger.addEventListener('click', ()=>{ const open=hamburger.classList.toggle('open'); mobileDrawer.classList.toggle('open', open); });
+
+const cardObserver=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'), i*35); cardObserver.unobserve(e.target); } });
+},{threshold:.08});
+
 function goTo(name){
   if(!views[name])return;
   viewNames.forEach(n=>views[n].classList.toggle('active-view',n===name));
@@ -560,19 +567,9 @@ function goTo(name){
 }
 document.querySelectorAll('[data-nav]').forEach(el=>{ el.addEventListener('click', e=>{ e.preventDefault(); goTo(el.dataset.nav); }); });
 
-const hamburger=document.getElementById('hamburger'), mobileDrawer=document.getElementById('mobileDrawer');
-hamburger.addEventListener('click', ()=>{ const open=hamburger.classList.toggle('open'); mobileDrawer.classList.toggle('open', open); });
-
-const cardObserver=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'), i*35); cardObserver.unobserve(e.target); } });
-},{threshold:.08});
-
 const myList = new Set();
 const likeSet = new Set();
 function itemKey(item){ return item.src; }
-/* .MOV files declared as video/mp4 get silently rejected by Safari/iOS even
-   though Chrome tolerates it — detect the real extension and use the right
-   MIME type so clips actually play everywhere. */
 function getVideoType(src){
   const m = src.toLowerCase().match(/\.([a-z0-9]+)(?:[?#].*)?$/);
   const ext = m ? m[1] : '';
@@ -683,7 +680,7 @@ const heroLikeBtn=document.getElementById('heroLikeBtn');
 let heroLiked=false;
 heroLikeBtn.addEventListener('click', ()=>{ heroLiked=!heroLiked; heroLikeBtn.style.color = heroLiked ? 'var(--red)' : '#fff'; heroLikeBtn.style.borderColor = heroLiked ? 'var(--red)' : 'var(--grey-2)'; });
 
-/* ── DATA ── */
+/* ── DATA (every filename below matches a file in your repo) ── */
 const PHOTO_GROUPS = [
   { label:"August 2025 · MSB Study & Memories", items:[
     {src:"91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG", cap:"Aug 2025"},
@@ -705,13 +702,13 @@ const PHOTO_GROUPS = [
     {src:"4365FC69-2A9F-4C7E-B466-EF6DFB3320C8_040.jpg", cap:"Mar 2026"},
     {src:"6BC82F2E-3B32-4556-8621-42A8E5661529_025.jpg", cap:"Mar 2026"},
     {src:"6BC82F2E-3B32-4556-8621-42A8E5661529_056.jpg", cap:"Mar 2026"},
-    {src:"IMG_6755.jpg", cap:"Mar 2026"},
-    {src:"att.TJA1VyAO3xTnNwer--UsoMwWT8hJtxi1N36ZhISmbno.jpg", cap:"Mar 2026"},
+    {src:"IMG_6755.JPG", cap:"Mar 2026"},
+    {src:"att.TJA1VyAO3xTnNwer--UsoMwWT8hJtxi1N36ZhISmbno.JPG", cap:"Mar 2026"},
     {src:"ac788850-4f85-4673-ba06-0d6beb0f7d99.jpeg", cap:"Mar 2026"},
     {src:"658177068_26120155027627619_3090402980393998288_n.jpg", cap:"Mar 2026"},
     {src:"IMG_6640.JPG", cap:"Mar 2026"}
   ]},
-  {label:"Solo Photos",items:[
+  { label:"Solo Photos", items:[
     {src:"IMG_2049.jpg", cap:"Mar 2026"},
     {src:"IMG_7062.jpg", cap:"Mar 2026"},
     {src:"IMG_4941.jpg", cap:"Mar 2026"},
@@ -723,7 +720,6 @@ const PHOTO_GROUPS = [
     {src:"IMG_0802.jpg", cap:"Graduation"},
     {src:"IMG_0816.jpg", cap:"Graduation"},
     {src:"IMG_0803.jpg", cap:"Graduation"},
-    {src:"IMG_0811.jpg", cap:"Graduation"},
     {src:"IMG_0811.jpg", cap:"Graduation"},
     {src:"IMG_0814.jpg", cap:"Graduation"},
     {src:"IMG_0821.jpg", cap:"Graduation"},
@@ -737,36 +733,25 @@ const PHOTO_GROUPS = [
 
 const VIDEO_GROUPS = [
   { label:"August 2025 · Study", items:[
-    {src:"IMG_2697.MOV", cap:"Aug 2025"},
     {src:"AB35B6B3-A8D3-4F8F-9130-7C5B7AD86964.MOV", cap:"Aug 2025"},
     {src:"64A8E8A0-24E3-4297-8673-79F71551F2B5.MP4", cap:"Aug 2025"}
   ]},
   { label:"Video Call 2025 · Fun Moments", items:[
-    {src:"995799a3ec64401189fbc5bd862344c0.MOV", cap:"Sep 2025"},
-    {src:"ScreenRecording_04-01-2026 21-50-34_1.MP4", cap:"Sep 2025"}
+    {src:"ScreenRecording_04-01-2026 21-50-34_1 (1).mp4", cap:"Sep 2025"}
   ]},
-  { label:" March - July 2026 · ", items:[
+  { label:"March - July 2026", items:[
     {src:"2DD8C305-73CF-4233-8423-1D6B0A0390C8.MP4", cap:"Mar 2026"},
     {src:"02EE3906-1246-4634-84D4-5C21718AE272.MP4", cap:"Mar 2026"},
     {src:"6BC82F2E-3B32-4556-8621-42A8E5661529.MP4", cap:"Mar 2026"},
     {src:"4365FC69-2A9F-4C7E-B466-EF6DFB3320C8.MP4", cap:"Mar 2026"},
     {src:"8353BA76-F4C2-4AAB-8F22-AF7F3023CC7A.MP4", cap:"Mar 2026"}
   ]},
-  { label:"Gym 2026 ·", items:[
+  { label:"Gym 2026", items:[
     {src:"1786175174129_instaPV.mp4", cap:"Mar 2026"}
   ]},
-  { label: "Inspire With Saddam", items: [
-    {src:"inspirewith%20Saddam/IMG_0142.mov", cap:"Sep 2026"},
-    {src:"inspirewith%20Saddam/IMG_0147.mov", cap:"Sep 2026"},
-    {src:"inspirewith%20Saddam/IMG_0148.mov", cap:"Sep 2026"},
-    {src:"inspirewith%20Saddam/IMG_0151.mov", cap:"Sep 2026"},
-  ]},
-  { label:"Graduation · The Big Day", items:[
-    {src:"gradv1.mp4", cap:"Graduation"},
-    {src:"gradv2.mp4", cap:"Graduation"},
-    {src:"gradv3.mp4", cap:"Graduation"},
-    {src:"gradv4.mp4", cap:"Graduation"},
-    {src:"gradv5.mp4", cap:"Graduation"}
+  { label:"Inspire With Saddam", items:[
+    {src:"IMG_0142.mov", cap:"Sep 2026"},
+    {src:"IMG_0148.mp4", cap:"Sep 2026"}
   ]}
 ];
 
@@ -798,51 +783,36 @@ const FAMILY_GROUPS = [
 ];
 
 const CALLS_GROUPS = [
-  { label: "Video Calls", items: [
-    {src:"IMG_7276%202.PNG", cap:"Sep 2026"},
+  { label:"Video Calls", items:[
+    {src:"IMG_7276 2.PNG", cap:"Sep 2026"},
     {src:"photo-output_1.jpeg", cap:"Sep 2026"},
     {src:"IMG_7917.jpg", cap:"Sep 2026"},
-    {src:"WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg", cap:"Sep 2026"},
+    {src:"WhatsApp Image 2026-09-14 at 22.03.19.jpeg", cap:"Sep 2026"},
     {src:"IMG_0108.PNG", cap:"Sep 2026"},
   ]},
-  { label: "Video Calls · Recordings", items: [
-    {src:"WhatsApp%20Video%202026-09-25%20at%2019.49.56.mp4", cap:"Mar 2026"},
-    {src:"ScreenRecording_04-01-2026 21-50-34_1.MP4", cap:"Mar 2026"},
+  { label:"Video Calls · Recordings", items:[
+    {src:"WhatsApp Video 2026-09-25 at 19.49.56 (1).mp4", cap:"Sep 2026"},
+    {src:"ScreenRecording_04-01-2026 21-50-34_1 (1).mp4", cap:"Apr 2026"},
   ]}
 ];
 
 const INSPIRE_GROUPS = [
-  { label: "Inspire With Saddam", items: [
-    {src:"inspirewith%20Saddam/IMG_0142.mov", cap:"Sep 2026"},
-    {src:"inspirewith%20Saddam/IMG_0147.mov", cap:"Sep 2026"},
-    {src:"inspirewith%20Saddam/IMG_0148.mov", cap:"Sep 2026"},
-    {src:"inspirewith%20Saddam/IMG_0151.mov", cap:"Sep 2026"},
-  ]}
-];
-const UNI_GROUPS = [
-  { label: "Uni Presentations", items: [
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 2_51_47 PM (1).mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 2_51_47 PM (2).mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 2_51_47 PM.mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_00_55 PM (1).mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_00_55 PM (2).mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_00_55 PM.mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_52_09 PM (1).mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_52_09 PM (2).mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 26, 2026, 3_52_09 PM.mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 31, 2026, 11_36 AM.mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 31, 2026, 11_53 AM.mp4", cap:"Mar 2026"},
-    {src:"assets/UniPresentation/Recording Mar 31, 2026, 12_16 PM.mp4", cap:"Mar 2026"},
+  { label:"Inspire With Saddam", items:[
+    {src:"IMG_0142.mov", cap:"Sep 2026"},
+    {src:"IMG_0148.mp4", cap:"Sep 2026"},
   ]}
 ];
 
-/* GRADUATION: 11 photos + 15 videos. Put files in assets/grad/ and rename below to match. */
+/* Not uploaded yet. Add files to the repo, then list them here. */
+const UNI_GROUPS = [ { label:"Uni Presentations", items:[] } ];
+
+/* Graduation videos not uploaded yet. Add them, then add a second group like:
+   { label:"Graduation · Videos", items:[ {src:"gradv1.mp4", cap:"Graduation"} ] } */
 const GRAD_GROUPS = [
   { label:"Graduation · Photos", items:[
     {src:"IMG_0802.jpg", cap:"Graduation"},
     {src:"IMG_0816.jpg", cap:"Graduation"},
     {src:"IMG_0803.jpg", cap:"Graduation"},
-    {src:"IMG_0811.jpg", cap:"Graduation"},
     {src:"IMG_0811.jpg", cap:"Graduation"},
     {src:"IMG_0814.jpg", cap:"Graduation"},
     {src:"IMG_0821.jpg", cap:"Graduation"},
@@ -851,23 +821,6 @@ const GRAD_GROUPS = [
     {src:"IMG_0847.jpg", cap:"Graduation"},
     {src:"IMG_0849.jpg", cap:"Graduation"},
     {src:"IMG_0850.jpg", cap:"Graduation"}
-  ]},
-  { label:"Graduation · Videos", items:[
-    {src:"grad/gradv1.mp4",  cap:"Graduation"},
-    {src:"grad/gradv2.mp4",  cap:"Graduation"},
-    {src:"grad/gradv3.mp4",  cap:"Graduation"},
-    {src:"grad/gradv4.mp4",  cap:"Graduation"},
-    {src:"grad/gradv5.mp4",  cap:"Graduation"},
-    {src:"grad/gradv6.mp4",  cap:"Graduation"},
-    {src:"grad/gradv7.mp4",  cap:"Graduation"},
-    {src:"grad/gradv8.mp4",  cap:"Graduation"},
-    {src:"grad/gradv9.mp4",  cap:"Graduation"},
-    {src:"grad/gradv10.mp4", cap:"Graduation"},
-    {src:"grad/gradv11.mp4", cap:"Graduation"},
-    {src:"grad/gradv12.mp4", cap:"Graduation"},
-    {src:"grad/gradv13.mp4", cap:"Graduation"},
-    {src:"grad/gradv14.mp4", cap:"Graduation"},
-    {src:"grad/gradv15.mp4", cap:"Graduation"}
   ]}
 ];
 
@@ -982,8 +935,6 @@ function buildVideoRowsGeneric(containerId, groups){
 }
 function buildVideoRows(){ return buildVideoRowsGeneric('rows-videos', VIDEO_GROUPS); }
 
-/* Mixed rows: a group is treated as a video group when its first item's src
-   ends in .mp4/.mov, otherwise as a photo group. Used by Calls and Graduation. */
 function buildCallsRowsGeneric(containerId, groups){
   const container=document.getElementById(containerId);
   let allPhotos=[], allVideos=[];
@@ -1062,23 +1013,13 @@ function initView(name){
     document.querySelectorAll('#view-videos .rcard').forEach(el=>cardObserver.observe(el));
   }
   if(name==='calls'){
-    const hasCalls = CALLS_GROUPS.some(g=>g.items.length>0);
-    if(hasCalls){
-      callsItemsFlat = buildCallsRowsGeneric('rows-calls', CALLS_GROUPS);
-      buildFilters('callsFilters', CALLS_GROUPS, 'rows-calls');
-    } else {
-      document.getElementById('rows-calls').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No video calls added yet — drop the clips into <code>assets/videocall/</code> and list them in the CALLS_GROUPS array near the top of the script.</p>';
-    }
+    callsItemsFlat = buildCallsRowsGeneric('rows-calls', CALLS_GROUPS);
+    buildFilters('callsFilters', CALLS_GROUPS, 'rows-calls');
     document.querySelectorAll('#view-calls .rcard').forEach(el=>cardObserver.observe(el));
   }
   if(name==='inspire'){
-    const hasInspire = INSPIRE_GROUPS.some(g=>g.items.length>0);
-    if(hasInspire){
-      inspireItemsFlat = buildVideoRowsGeneric('rows-inspire', INSPIRE_GROUPS);
-      buildFilters('inspireFilters', INSPIRE_GROUPS, 'rows-inspire');
-    } else {
-      document.getElementById('rows-inspire').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No videos added yet — drop clips into <code>assets/inspire/</code> and list them in the INSPIRE_GROUPS array near the top of the script.</p>';
-    }
+    inspireItemsFlat = buildVideoRowsGeneric('rows-inspire', INSPIRE_GROUPS);
+    buildFilters('inspireFilters', INSPIRE_GROUPS, 'rows-inspire');
     document.querySelectorAll('#view-inspire .rcard').forEach(el=>cardObserver.observe(el));
   }
   if(name==='uni'){
@@ -1087,22 +1028,16 @@ function initView(name){
       uniItemsFlat = buildVideoRowsGeneric('rows-uni', UNI_GROUPS);
       buildFilters('uniFilters', UNI_GROUPS, 'rows-uni');
     } else {
-      document.getElementById('rows-uni').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No uni presentation clips added yet — drop them into <code>assets/uni/</code> and list them in the UNI_GROUPS array near the top of the script.</p>';
+      document.getElementById('rows-uni').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">Presentations coming soon.</p>';
     }
-    document.querySelectorAll('#view-uni .rcard').forEach(el=>cardObserver.observe(el));
   }
   if(name==='queenstown'){
     queenstownItemsFlat = buildPhotoRowsGeneric('rows-queenstown', QUEENSTOWN_GROUPS);
     document.querySelectorAll('#view-queenstown .rcard').forEach(el=>cardObserver.observe(el));
   }
   if(name==='family'){
-    const hasPhotos = FAMILY_GROUPS.some(g=>g.items.length>0);
-    if(hasPhotos){
-      familyItemsFlat = buildPhotoRowsGeneric('rows-family', FAMILY_GROUPS);
-      buildFilters('familyFilters', FAMILY_GROUPS, 'rows-family');
-    } else {
-      document.getElementById('rows-family').innerHTML='<p style="padding:0 4vw;color:var(--grey-2);font-size:.9rem;">No family photos added yet — drop them into <code>assets/family/</code> and list them in the FAMILY_GROUPS array near the top of the script.</p>';
-    }
+    familyItemsFlat = buildPhotoRowsGeneric('rows-family', FAMILY_GROUPS);
+    buildFilters('familyFilters', FAMILY_GROUPS, 'rows-family');
     document.querySelectorAll('#view-family .rcard').forEach(el=>cardObserver.observe(el));
   }
   if(name==='grad'){
@@ -1218,7 +1153,7 @@ document.addEventListener('keydown', e=>{
       const err=audio.error;
       const msgs={1:"Audio load aborted",2:"Network error loading audio",3:"Audio file can't be decoded",4:"Audio file not found"};
       errLabel(err?(msgs[err.code]||"Audio error"):"Audio error");
-    }); }
+    }, true); }
     if(playBtn&&audio){ playBtn.addEventListener("click",()=>{
       if(audio.paused){ audio.play().then(()=>setUI(true)).catch(()=>{ setUI(false); if(label&&label.textContent===defaultLabel) errLabel("Tap again to allow audio"); }); }
       else { audio.pause(); setUI(false); }
