@@ -247,9 +247,9 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
       <div class="tile" data-nav="photos"><img src="91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG" alt="Photos"><div class="tile-body"><div class="tile-kicker">Issue 01 · Photo Gallery</div><div class="tile-title">Photos</div><div class="tile-sub">Every smile, captured</div></div></div>
       <div class="tile" data-nav="videos"><img src="IMG_6640.JPG" alt="Videos"><div class="tile-body"><div class="tile-kicker">Issue 02 · Video Gallery</div><div class="tile-title">Videos</div><div class="tile-sub">Moments that kept moving</div></div></div>
       <div class="tile" data-nav="queenstown"><img src="q3.jpeg" alt="Queenstown"><div class="tile-body"><div class="tile-kicker">Issue 03 · Special Trip</div><div class="tile-title">Queenstown</div><div class="tile-sub">Mountains, lakes, one trip south</div></div></div>
-      <div class="tile" data-nav="family"><img src="assets/family/WhatsApp Image 2026-09-15 at 14.15.51.jpeg" alt="Family"><div class="tile-body"><div class="tile-kicker">Issue 04 · Home Base</div><div class="tile-title">Family</div><div class="tile-sub">The people behind it all</div></div></div>
-      <div class="tile" data-nav="calls"><img src="assets/videocall/WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg" alt="Video Calls"><div class="tile-body"><div class="tile-kicker">Issue 06 · Long Distance</div><div class="tile-title">Video Calls</div><div class="tile-sub">Miles apart, still on the line</div></div></div>
-      <div class="tile" data-nav="grad"><img src="assets/grad/grad1.jpg" alt="Graduation"><div class="tile-body"><div class="tile-kicker">Issue 09 · The Big Day</div><div class="tile-title">Graduation</div><div class="tile-sub">Cap, gown, done</div></div></div>
+      <div class="tile" data-nav="family"><img src="WhatsApp Image 2026-09-15 at 14.15.51.jpeg" alt="Family"><div class="tile-body"><div class="tile-kicker">Issue 04 · Home Base</div><div class="tile-title">Family</div><div class="tile-sub">The people behind it all</div></div></div>
+      <div class="tile" data-nav="calls"><img src="WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg" alt="Video Calls"><div class="tile-body"><div class="tile-kicker">Issue 06 · Long Distance</div><div class="tile-title">Video Calls</div><div class="tile-sub">Miles apart, still on the line</div></div></div>
+      <div class="tile" data-nav="grad"><img src="IMG_0802.jpg" alt="Graduation"><div class="tile-body"><div class="tile-kicker">Issue 09 · The Big Day</div><div class="tile-title">Graduation</div><div class="tile-sub">Cap, gown, done</div></div></div>
     </div>
   </section>
 
@@ -339,10 +339,10 @@ footer{padding:2.2rem 4vw;border-top:1px solid var(--hair);}
 <script>
 /* ───────── DATA ───────── */
 const g=(label,cap,files,prefix='')=>({label,items:files.map(f=>({src:prefix+f,cap}))});
-const GRAD_DIR='assets/grad/';
+const GRAD_DIR='';
 const GRAD_PHOTOS=['IMG_0802','IMG_0816','IMG_0803','IMG_0811','IMG_0814','IMG_0821','IMG_0824','IMG_0835','IMG_0847','IMG_0849','IMG_0850'].map(n=>n+'.jpg');
 const GRAD_VIDEOS=Array.from({length:15},(_,i)=>`gradv${i+1}.mp4`);
-const INSPIRE_FILES=['IMG_0142','IMG_0147','IMG_0148','IMG_0151'].map(n=>`assets/inspirewith%20Saddam/${n}.mov`);
+const INSPIRE_FILES=['IMG_0142','IMG_0147','IMG_0148','IMG_0151'].map(n=>`${n}.mov`);
 
 const PHOTO_GROUPS=[
   g("August 2025 · MSB Study & Memories","Aug 2025",["91F6C613-E5C1-40FC-8D05-4628B9E24EF7.JPG","IMG_1745.jpg","IMG_2908.jpg","IMG_6760.jpg"]),
@@ -363,16 +363,16 @@ const VIDEO_GROUPS=[
 ];
 const QUEENSTOWN_GROUPS=[g("June 2026 · Queenstown","Jun 2026",["q1.jpeg","q2.jpg","q4.jpeg","q3.jpeg","WhatsApp Image 2026-07-03 at 17.52.02.jpeg"])];
 const FAMILY_GROUPS=[{label:"Family · Cheering Him On",items:[
-  ...["WhatsApp Image 2026-09-07 at 12.10.17.jpeg","WhatsApp Image 2026-09-15 at 14.15.50.jpeg","WhatsApp Image 2026-09-15 at 14.15.51.jpeg","1bf81dc1-41e3-4f4f-9ae0-04b7ce15465a.jpeg","d98184a4-3dc7-4369-82c9-67f202beba0d.jpeg"].map(f=>({src:'assets/family/'+f,cap:"Cheering Him On"})),
-  ...["FB_IMG_1730692392265.jpg","FB_IMG_1730693765061.jpg","IMG20231122215901.jpg","IMG20231122220109.jpg","IMG20231122230907.jpg","IMG20231124171842.jpg","WhatsApp Image 2026-09-15 at 14.15.53.jpeg"].map(f=>({src:'assets/family/'+f,cap:"Jun 2026"}))
+  ...["WhatsApp Image 2026-09-07 at 12.10.17.jpeg","WhatsApp Image 2026-09-15 at 14.15.50.jpeg","WhatsApp Image 2026-09-15 at 14.15.51.jpeg","1bf81dc1-41e3-4f4f-9ae0-04b7ce15465a.jpeg","d98184a4-3dc7-4369-82c9-67f202beba0d.jpeg"].map(f=>({src:f,cap:"Cheering Him On"})),
+  ...["FB_IMG_1730692392265.jpg","FB_IMG_1730693765061.jpg","IMG20231122215901.jpg","IMG20231122220109.jpg","IMG20231122230907.jpg","IMG20231124171842.jpg","WhatsApp Image 2026-09-15 at 14.15.53.jpeg"].map(f=>({src:f,cap:"Jun 2026"}))
 ]}];
 const CALLS_GROUPS=[
-  g("Video Calls","Sep 2026",["IMG_7276%202.PNG","photo-output_1.jpeg","IMG_7917.jpg","WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg","IMG_0108.PNG"],'assets/videocall/'),
-  g("Video Calls · Recordings","Mar 2026",["WhatsApp%20Video%202026-09-25%20at%2019.49.56.mp4","ScreenRecording_04-01-2026 21-50-34_1.MP4"],'assets/videocall/')
+  g("Video Calls","Sep 2026",["IMG_7276%202.PNG","photo-output_1.jpeg","IMG_7917.jpg","WhatsApp%20Image%202026-09-14%20at%2022.03.19.jpeg","IMG_0108.PNG"]),
+  g("Video Calls · Recordings","Mar 2026",["WhatsApp%20Video%202026-09-25%20at%2019.49.56.mp4","ScreenRecording_04-01-2026 21-50-34_1.MP4"])
 ];
 const INSPIRE_GROUPS=[g("Inspire With Saddam","Sep 2026",INSPIRE_FILES)];
 const UNI_FILES=["Recording Mar 26, 2026, 2_51_47 PM (1).mp4","Recording Mar 26, 2026, 2_51_47 PM (2).mp4","Recording Mar 26, 2026, 2_51_47 PM.mp4","Recording Mar 26, 2026, 3_00_55 PM (1).mp4","Recording Mar 26, 2026, 3_00_55 PM (2).mp4","Recording Mar 26, 2026, 3_00_55 PM.mp4","Recording Mar 26, 2026, 3_52_09 PM (1).mp4","Recording Mar 26, 2026, 3_52_09 PM (2).mp4","Recording Mar 26, 2026, 3_52_09 PM.mp4","Recording Mar 31, 2026, 11_36 AM.mp4","Recording Mar 31, 2026, 11_53 AM.mp4","Recording Mar 31, 2026, 12_16 PM.mp4"];
-const UNI_GROUPS=[g("Uni Presentations","Mar 2026",UNI_FILES,'assets/UniPresentation/')];
+const UNI_GROUPS=[g("Uni Presentations","Mar 2026",UNI_FILES)];
 const GRAD_GROUPS=[g("Graduation · Photos","Graduation",GRAD_PHOTOS,GRAD_DIR),g("Graduation · Videos","Graduation",GRAD_VIDEOS,GRAD_DIR)];
 
 const VIEWS={photos:PHOTO_GROUPS,videos:VIDEO_GROUPS,calls:CALLS_GROUPS,inspire:INSPIRE_GROUPS,uni:UNI_GROUPS,queenstown:QUEENSTOWN_GROUPS,family:FAMILY_GROUPS,grad:GRAD_GROUPS};
